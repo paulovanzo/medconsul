@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  medconsul-frontend-nginx:
+    build: 
+      context: ./frontend/
+      dockerfile: devops/Dockerfile
+    ports:
+      - 80:80
+  medconsul-backend:
+    build:
+      context: ./backend/
+      dockerfile: devops/Dockerfile
+    ports:
+      - 8000:8080
