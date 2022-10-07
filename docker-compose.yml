@@ -4,11 +4,15 @@ services:
     build: 
       context: ./frontend/
       dockerfile: devops/Dockerfile
+    restart: unless-stopped
     ports:
       - 80:80
+    depends_on:
+      - medconsul-backend
   medconsul-backend:
     build:
       context: ./backend/
       dockerfile: devops/Dockerfile
+    restart: unless-stopped
     ports:
       - 8000:8080
