@@ -6,4 +6,4 @@ RUN yarn install && yarn build
 
 FROM nginx:alpine as app
 COPY devops/nginx.conf /etc/nginx/
-COPY --from=dev /srv/app/build/ /usr/share/nginx/html/
+COPY --from=builder /srv/app/build/ /usr/share/nginx/html/
