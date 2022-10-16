@@ -14,7 +14,7 @@ import javax.persistence.OneToMany;
 import app.medconsul.entities.Address;
 
 @Entity
-public class Doctor {
+public class Patient {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
@@ -22,8 +22,6 @@ public class Doctor {
     @Column
     public String name;
 
-    @OneToMany(fetch = FetchType.LAZY)
-    @JoinColumn(name = "dc_id")
-    public List<Address> addresses;
-
+    @Column
+    public String email;
 }
