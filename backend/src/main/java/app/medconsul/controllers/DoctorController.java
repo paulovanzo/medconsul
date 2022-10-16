@@ -9,7 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
 public class DoctorController {
@@ -21,10 +21,10 @@ public class DoctorController {
         List<Doctor> docs = doctorService.getAllDoctor();
         return ResponseEntity.ok(docs);
     }
-    /*
+
     @RequestMapping(value = "/doctor", method =  RequestMethod.POST)
-    public Doctor Post( @RequestBody Doctor doctor){
-        return doctorService.save(doctor);
+    public ResponseEntity<Doctor> Post( @RequestBody Doctor doctor){
+        Doctor doc = doctorService.save(doctor);
+        return ResponseEntity.ok(doc);
     }
-    */
 }

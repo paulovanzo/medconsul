@@ -1,3 +1,10 @@
+FROM openjdk:17-alpine as dev
+RUN mkdir /srv/app
+COPY . /srv/app
+RUN apk add --no-cache curl tar bash procps maven
+WORKDIR /srv/app
+RUN mvn clean install && ./mvnw clean install && mvn sprin-boot:run
+
 FROM openjdk:17-alpine as builder
 RUN mkdir /srv/app
 COPY . /srv/app

@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   medconsul-frontend-nginx:
-    build: 
+    build:
       context: ./frontend/
       dockerfile: devops/Dockerfile
     restart: unless-stopped
@@ -15,7 +15,7 @@ services:
       dockerfile: devops/Dockerfile
     restart: unless-stopped
     ports:
-      - 8000:8080
+      - 8080:8080
     depends_on:
       - database
   database:
