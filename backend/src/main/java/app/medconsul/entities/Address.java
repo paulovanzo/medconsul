@@ -1,7 +1,5 @@
 package app.medconsul.entities;
 
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -30,6 +28,6 @@ public class Address {
 
     @ManyToOne
     @JoinColumn(name = "dc_id")
-    public Doctor dc_id;
+    public Doctor doc_id;
 
 }

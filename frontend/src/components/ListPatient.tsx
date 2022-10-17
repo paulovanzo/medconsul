@@ -1,21 +1,21 @@
-import '../styles/ListPatient.css' 
+import '../styles/listpatient.css' 
 import { useState } from 'react'
-import '../styles/PagPatient.css' 
-import { AiFillHome } from 'react-icons/Ai';
+import '../styles/pagpatient.css' 
+import { AiFillHome } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 
 function ListPatient() { 
     const [isShown, setIsShown] = useState(true); 
  
-    const handleClick = event => { 
-        setIsShown(current => !current); 
-    }; 
+    const handleClick = () => { 
+        setIsShown(!isShown)
+    }
  
     return ( 
         <div className='container-list'> 
             <div className='crumb'> 
                 <AiFillHome /> 
-                <Link to="/">Home > </Link>
+                <Link to="/">Home {'>'} </Link>
                 <label> Paciente</label> 
             </div> 
             <div className='filter-create'> 

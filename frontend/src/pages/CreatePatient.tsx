@@ -1,5 +1,5 @@
 import '../styles/pagcreatepatient.css'
-import { AiFillHome } from 'react-icons/Ai';                                                                                                                 
+import { AiFillHome } from 'react-icons/ai';                                                                                                                 
 import Header from '../components/Header';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -14,8 +14,8 @@ function CreatePatient() {
         <div className='container-new-patient'>
             <div className='crumb'>
                 <AiFillHome />
-                <label> Home > </label>
-                <Link to="/patient">Paciente ></Link>
+                <label> Home {'>'} </label>
+                <Link to="/patient">Paciente {'>'}</Link>
                 <label> Criar novo Paciente</label>
             </div>
             <div className='container-form'>

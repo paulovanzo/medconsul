@@ -1,5 +1,5 @@
 import '../styles/mainpage.css'
-import { AiFillHome } from 'react-icons/Ai';
+import { AiFillHome } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 
 function Body() {
