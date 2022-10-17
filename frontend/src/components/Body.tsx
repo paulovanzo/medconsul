@@ -9,7 +9,7 @@ function Body() {
         <div className='container-menu'>
             <div className='crumb'>
                 <AiFillHome />
-                <h3> home </h3>
+                <h3> Home </h3>
             </div>
             <body className='body-menu'>
                 <div className='menu'>

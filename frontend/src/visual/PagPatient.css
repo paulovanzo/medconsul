@@ -1,0 +1,35 @@
+:root{
+    background-color: #E1F2EF;
+}
+
+.container-list{
+    width: 95%;
+    margin: auto;
+}
+
+#seach-patient{
+    border-radius: 10px;
+    width: 290px;
+    height: 30px;
+    border-color: #05595B;
+    background-image: url('C:\Users\Giovanna\Documents\PDS\medconsul\frontend\src\icons\icons8-pesquisar-30 1.png');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 25px;
+    background-color: #FCFCFC;
+}
+
+.filter-create{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+#new-patient{
+    height: 35px;
+    width: 220px;
+    background-color: #05595B;
+    color: #FCFCFC;
+    border-radius: 10px;
+    border: none;
+}
