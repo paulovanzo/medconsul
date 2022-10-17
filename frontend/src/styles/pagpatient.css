@@ -17,12 +17,16 @@
     background-position: right;
     background-size: 25px;
     background-color: #FCFCFC;
+    border: 1px solid #05595B;
+    border-radius: 10px;
+    box-sizing: border-box;
 }
 
 .filter-create{
     display: flex;
     width: 100%;
     justify-content: space-between;
+    align-items: center;
 }
 
 #new-patient{
@@ -32,4 +36,16 @@
     color: #FCFCFC;
     border-radius: 10px;
     border: none;
+    cursor: pointer;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+a{
+    margin: 0px 5px 0px 5px;
+}
+
+.crumb{
+    display: inline-flex;
+    align-items: center;
+    margin-left: 0px;
 }
