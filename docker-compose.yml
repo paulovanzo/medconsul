@@ -13,7 +13,7 @@ services:
   database:
     image: postgres:13
     restart: always
-    container_name: postgres
+    container_name: database
     ports:
       - 5432:5432
     volumes:
@@ -28,6 +28,8 @@ services:
       dockerfile: devops/Dockerfile
       target: app
     restart: unless-stopped
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://database:5432/postgres
     ports:
       - 8080:8080
     depends_on:

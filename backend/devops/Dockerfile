@@ -5,7 +5,7 @@ RUN apk add --no-cache curl tar bash procps maven
 WORKDIR /srv/app
 RUN mvn clean install
 
-FROM builder as app
+FROM openjdk:17-alpine as app
 RUN mkdir /srv/app
 ENV JAR_FILE=target/*.jar
 COPY --from=builder /srv/app/${JAR_FILE} /srv/app/app.jar
