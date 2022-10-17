@@ -2,26 +2,29 @@ package app.medconsul.services;
 
 import java.util.List;
 
-import javax.transaction.Transactional;
-
 import app.medconsul.entities.Doctor;
-import app.medconsul.services.IDoctorService;
 import app.medconsul.repositories.IDoctorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class DoctorService implements IDoctorService {
-
+    
+    private final IDoctorRepository doctorRepository;
+    
     @Autowired
-    private IDoctorRepository DoctorRepository;
+    public DoctorService(IDoctorRepository doctorRepository){
+        this.doctorRepository = doctorRepository;
+    }
 
     @Override
     public List<Doctor> getAllDoctor() {
-        return DoctorRepository.findAll();
+        return doctorRepository.findAll();
     }
 
-    @Transactional
+    @Override
     public Doctor save(Doctor doc) {
-        return DoctorRepository.save(doc);
+        return doctorRepository.save(doc);
     }
 
 }

@@ -4,6 +4,7 @@ services:
     build:
       context: ./frontend/
       dockerfile: devops/Dockerfile
+      target: app
     restart: unless-stopped
     ports:
       - 80:80
@@ -13,6 +14,7 @@ services:
     build:
       context: ./backend/
       dockerfile: devops/Dockerfile
+      target: app
     restart: unless-stopped
     ports:
       - 8080:8080

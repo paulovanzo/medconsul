@@ -5,4 +5,5 @@ import app.medconsul.entities.Patient;
 
 public interface IPatientService {
     List<Patient> getAllPatient();
+    Patient save(Patient doc);
 }
