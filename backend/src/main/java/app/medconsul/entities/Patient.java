@@ -10,9 +10,9 @@ import javax.persistence.Id;
 import javax.persistence.CascadeType;
 import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
+import java.time.LocalDate;
 
 import app.medconsul.entities.Address;
-import java.time.LocalDate;
 
 @Entity
 public class Patient {
