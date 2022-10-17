@@ -1,6 +1,7 @@
 :root{
     background-color: #E1F2EF;
 }
+
 .head-main{
     height: 90px;
     width: 100%;
@@ -9,10 +10,12 @@
     flex-direction: row-reverse;
     align-items: center;
 }
+
 .header-functions{
     display: flex;
     padding: 25px;
 }
+
 .menu{
     background-color: #F9F9F9;
     width: 100%;
@@ -88,9 +91,15 @@ a{
 .crumb{
     display: inline-flex;
     align-items: center;
+    margin-left: 0px;
 }
 
 .container-menu{
     width: 95%;
     margin: auto;
+}
+
+label{
+    size: 25px;
+    margin: 8px 5px 8px 5px;
 }

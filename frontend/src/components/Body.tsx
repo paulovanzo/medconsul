@@ -1,5 +1,6 @@
 import '../styles/mainpage.css'
-import { AiFillHome } from 'react-icons/ai';
+import { AiFillHome } from 'react-icons/Ai';
+import { Link } from 'react-router-dom';
 
 function Body() {
 
@@ -7,7 +8,7 @@ function Body() {
         <div className='container-menu'>
             <div className='crumb'>
                 <AiFillHome />
-                <h3> home </h3>
+                <label> Home </label>
             </div>
             <body className='body-menu'>
                 <div className='menu'>
@@ -17,7 +18,7 @@ function Body() {
                             
                         </div>
                         <div>
-                            <a href="">Paciente</a>
+                            <Link to="/patient">Paciente</Link>
 
                         </div>
                     </div>

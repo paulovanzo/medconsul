@@ -1,6 +1,6 @@
 import '../styles/mainpage.css'
-import { BsPersonCircle } from 'react-icons/bs';
-import { BiLogIn } from 'react-icons/bi';
+import { BsPersonCircle } from 'react-icons/Bs';
+import { BiLogIn } from 'react-icons/Bi';
 
 
 function Header() {
@@ -9,7 +9,7 @@ function Header() {
       <header>
         <div className='header-functions'>
             <div className='user-name'>
-                <h2 id='name-user'> Nome do usuário </h2>
+                <label id='name-user'> Nome do usuário </label>
                 <BsPersonCircle size={30} color={'FFFFFF'}/>
             </div>
             <div className='button-logout'>
