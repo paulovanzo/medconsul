@@ -1,7 +1,5 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import '../visual/Pag1.css'
-import { AiFillHome } from 'react-icons/Ai';
+import '../styles/mainpage.css'
+import { AiFillHome } from 'react-icons/ai';
 
 function Body() {
 

@@ -12,6 +12,7 @@ import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 
 import app.medconsul.entities.Address;
+import java.time.LocalDate;
 
 @Entity
 public class Patient {
@@ -23,10 +24,25 @@ public class Patient {
     public String name;
 
     @Column(nullable = false)
+    public String cpf;
+
+    @Column(nullable = false)
     public String email;
 
     @Column(nullable = false)
     public String phoneNumber;
+
+    @Column(nullable = false)
+    public LocalDate birthday;
+
+    public enum Gender {
+        Male,
+        Female,
+        Other
+    }
+
+    @Column
+    public Gender gender;
 
     @Column
     public String urlImage;

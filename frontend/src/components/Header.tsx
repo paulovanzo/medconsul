@@ -1,8 +1,6 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import '../visual/Pag1.css'
-import { BsPersonCircle } from 'react-icons/Bs';
-import { BiLogIn } from 'react-icons/Bi';
+import '../styles/mainpage.css'
+import { BsPersonCircle } from 'react-icons/bs';
+import { BiLogIn } from 'react-icons/bi';
 
 
 function Header() {
