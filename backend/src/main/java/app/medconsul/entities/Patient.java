@@ -24,6 +24,9 @@ public class Patient {
     public String name;
 
     @Column(nullable = false)
+    public String cpf;
+
+    @Column(nullable = false)
     public String email;
 
     @Column(nullable = false)
@@ -32,8 +35,14 @@ public class Patient {
     @Column(nullable = false)
     public LocalDate birthday;
 
-    @Column(nullable = false)
-    public String cpf;
+    public enum Gender {
+        Male,
+        Female,
+        Other
+    }
+
+    @Column
+    public Gender gender;
 
     @Column
     public String urlImage;

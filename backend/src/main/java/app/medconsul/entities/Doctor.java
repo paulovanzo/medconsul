@@ -19,11 +19,17 @@ public class Doctor {
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
 
-    @Column
+    @Column (nullable = false)
     public String name;
 
     @Column(nullable = false)
     public String crm;
+
+    @Column(nullable = false)
+    public String phoneNumber;
+
+    @Column(nullable = false)
+    public String specialty;
 
     @OneToMany(fetch = FetchType.LAZY)
     @JoinColumn(name = "dc_id")
