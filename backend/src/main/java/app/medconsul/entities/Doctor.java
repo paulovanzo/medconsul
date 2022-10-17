@@ -22,6 +22,9 @@ public class Doctor {
     @Column
     public String name;
 
+    @Column(nullable = false)
+    public String crm;
+
     @OneToMany(fetch = FetchType.LAZY)
     @JoinColumn(name = "dc_id")
     public List<Address> addresses;
