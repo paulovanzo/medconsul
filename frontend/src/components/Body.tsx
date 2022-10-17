@@ -19,7 +19,6 @@ function Body() {
                         </div>
                         <div>
                             <Link to="/patient">Paciente</Link>
-
                         </div>
                     </div>
 
@@ -27,7 +26,9 @@ function Body() {
                         <div className='icon-item-menu'>
 
                         </div>
-                        <a href="">Médico</a>
+                        <div>
+                            <Link to="/doctor">Médico</Link>
+                        </div>
                     </div>
 
                 </div>

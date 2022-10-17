@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @RestController
-@RequestMapping(path = "/api/v1/patient")
 public class PatientController {
 
     private final PatientService patientService;

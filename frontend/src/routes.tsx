@@ -4,8 +4,9 @@ import {
   Route,
 } from "react-router-dom";
 import CreatePatient from "./pages/CreatePatient";
+import CreateDoctor from "./pages/CreateDoctor";
 import MainPage from "./pages/MainPage";
-
+import PagDoctor from "./pages/PagDoctor";
 import PagPatient from "./pages/PagPatient";
   
 export function Router() {
@@ -15,8 +16,9 @@ export function Router() {
             <Routes>
                 <Route path='/' element={<MainPage/>} />
                 <Route path="/patient" element={<PagPatient />}/>
-                <Route path='/patient/createNewPatiente' element={<CreatePatient/>} />
-
+                <Route path="/doctor" element={<PagDoctor />}/>
+                <Route path='/patient/createNewPatient' element={<CreatePatient/>} />
+                <Route path='/doctor/createNewDoctor' element={<CreateDoctor/>} />
             </Routes>
         </BrowserRouter>
     )

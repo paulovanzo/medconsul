@@ -4,7 +4,7 @@ import '../styles/pagpatient.css'
 import { AiFillHome } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 
-function ListPatient() { 
+function ListDoctor() { 
     const [isShown, setIsShown] = useState(true); 
  
     const handleClick = () => { 
@@ -16,11 +16,11 @@ function ListPatient() {
             <div className='crumb'> 
                 <AiFillHome /> 
                 <Link to="/">Home {'>'} </Link>
-                <label> Paciente</label> 
+                <label>Doctor</label> 
             </div> 
             <div className='filter-create'> 
-                <input type="text" id='seach-patient' placeholder='Campo de busca' /> 
-                <Link to="../patient/createNewPatient"><button id='new-patient'>Cadastrar novo paciente</button></Link> 
+                <input type="text" id='search-doctor' placeholder='Campo de busca' /> 
+                <Link to="/doctor/createNewDoctor"><button id='new-doctor'>Cadastrar novo médico</button></Link> 
             </div> 
             <body className='body-menu'> 
                 <div className='list'> 
@@ -57,7 +57,5 @@ function ListPatient() {
  
     ) 
 } 
- 
- 
- 
-export default ListPatient
+
+export default ListDoctor

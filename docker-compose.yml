@@ -10,6 +10,18 @@ services:
       - 80:80
     depends_on:
       - medconsul-backend
+  database:
+    image: postgres:13
+    restart: always
+    container_name: postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - dbfiles:/var/lib/postgres/data
+    environment:
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_USER: postgres
+      POSTGRES_DB: postgres
   medconsul-backend:
     build:
       context: ./backend/
@@ -20,17 +32,6 @@ services:
       - 8080:8080
     depends_on:
       - database
-  database:
-    image: postgres:13
-    restart: always
-    ports:
-      - 5432:5432
-    volumes:
-      - dbfiles:/var/lib/postgres/data
-    environment:
-      POSTGRES_PASSWORD: 123456
-      POSTGRES_USER: postgres
-      POSTGRES_DB: postgres
 
 volumes:
   dbfiles:

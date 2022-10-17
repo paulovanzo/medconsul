@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication(scanBasePackages = {"controllers","services","entities", "repositories"})
-@EnableJpaRepositories(basePackages= "repositories")
+@EnableJpaRepositories
 public class MedconsulApplication {
 
 	public static void main(String[] args) {
