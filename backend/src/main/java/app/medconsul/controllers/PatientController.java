@@ -2,8 +2,7 @@ package app.medconsul.controllers;
 
 import java.util.List;
 
-import app.medconsul.entities.Patient;
-import app.medconsul.services.PatientService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,15 +11,15 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import app.medconsul.entities.Patient;
+import app.medconsul.services.PatientService;
+
 @RestController
+@RequestMapping(value = "/api/v1", produces = "application/json")
 public class PatientController {
 
-    private final PatientService patientService;
-
     @Autowired
-    public PatientController(PatientService patientService){
-        this.patientService = patientService;
-    } 
+    private PatientService patientService;
 
     @GetMapping(value = "/patients")
     public ResponseEntity<List<Patient>> Get(){

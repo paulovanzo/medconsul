@@ -2,12 +2,13 @@ version: "3.8"
 services:
   medconsul-frontend-nginx:
     build:
+      image: medconsul-frontend-dev
       context: ./frontend/
       dockerfile: devops/Dockerfile
-      target: app
+      target: dev
     restart: unless-stopped
     ports:
-      - 80:80
+      - 3000:3000
     depends_on:
       - medconsul-backend
   database:
@@ -24,9 +25,10 @@ services:
       POSTGRES_DB: postgres
   medconsul-backend:
     build:
+      image: medconsul-backend-dev
       context: ./backend/
       dockerfile: devops/Dockerfile
-      target: app
+      target: dev
     restart: unless-stopped
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://database:5432/postgres

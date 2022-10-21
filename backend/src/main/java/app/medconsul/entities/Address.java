@@ -1,18 +1,25 @@
 package app.medconsul.entities;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.JoinColumn;
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "address")
 public class Address {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
+
+    @ManyToOne(targetEntity = Doctor.class, fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "addresses", nullable = false)
+    private Doctor doctor;
 
     @Column
     public String name;
@@ -26,8 +33,16 @@ public class Address {
     @Column
     public String number;
 
-    @ManyToOne
-    @JoinColumn(name = "dc_id")
-    public Doctor doc_id;
+    public Address(){
+        this.name = "";
+        this.cep = "";
+        this.street = "";
+        this.number = "";
+    }
 
+    public Address(String name, Doctor doc){
+        this.doctor = doc;
+        this.name = name;
+    }
+    
 }

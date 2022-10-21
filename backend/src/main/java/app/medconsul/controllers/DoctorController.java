@@ -11,29 +11,24 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-
 @RestController
+@RequestMapping("/api/v1")
 public class DoctorController {
 
-    private final DoctorService doctorService;
-
     @Autowired
-    public DoctorController(DoctorService doctorService) {
-        this.doctorService = doctorService;
-    }
+    private DoctorService doctorService;
 
-    @RequestMapping(value = "/doctors", method = RequestMethod.GET)
-    public ResponseEntity<List<Doctor>> Get(){
+    @RequestMapping(value = "/doctors", produces = "application/json", method = RequestMethod.GET)
+    public ResponseEntity<List<Doctor>> doctors(){
         List<Doctor> docs = doctorService.getAllDoctor();
         return ResponseEntity.ok(docs);
     }
     
 
-    @RequestMapping(value = "/doctor", method = RequestMethod.POST)
-    public ResponseEntity<Doctor> Post( @RequestBody Doctor doctor){
-        Doctor doc = doctorService.save(new Doctor(doctor.getName(),doctor.getCrm(),doctor.getPhoneNumber(),doctor.getSpecialty(),doctor.getAddresses()));
-        System.out.println(doc);
-        return ResponseEntity.ok(doc);
+    @RequestMapping(value = "/doctor", consumes = "application/json", method = RequestMethod.POST)
+    public ResponseEntity<Doctor> doctor( @RequestBody Doctor doctor) throws Exception {
+        System.out.println(doctor);
+        return ResponseEntity.ok(doctorService.save(doctor));
     }
     
 }

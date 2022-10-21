@@ -8,10 +8,10 @@ Ao instalar o [docker-compose](https://docs.docker.com/compose/), esteja no dire
 
     docker-compose up -d
 
-Para desenvolimento, utilize o script running-dev-app.sh, execute-o, utilizando:
+O backend estará respondendo na porta 8080 e o frontend na porta 80.
 
-    chmod +x running-dev-app.sh
+Para desenvolimento, utilize o compose-dev.yml
 
-    ./running-dev-app.sh
+    docker-compose -f compose-dev.yml up --build -d 
 
-O backend estará respondendo na porta 8080 e o frontend na porta 80
+Quando em desenvolvimento o frontend responderá na porta 3000.

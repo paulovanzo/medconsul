@@ -4,13 +4,16 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import javax.persistence.JoinColumn;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "doctor")
 public class Doctor {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
@@ -28,8 +31,8 @@ public class Doctor {
     @Column
     public String specialty;
 
-    @OneToMany(fetch = FetchType.LAZY)
-    @JoinColumn(name = "dc_id")
+    @OneToMany(targetEntity = Address.class, cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "doctor_fk", referencedColumnName = "id")
     public List<Address> addresses;
 
     public Doctor(){
@@ -39,12 +42,11 @@ public class Doctor {
         this.specialty = "";
     }
 
-    public Doctor(String name, String crm, String phoneNumber, String specialty, List<Address> addresses) {
+    public Doctor(String name, String crm, String phoneNumber, String specialty) {
         this.name = name;
         this.crm = crm;
         this.phoneNumber = phoneNumber;
         this.specialty = specialty;
-        this.addresses = addresses;
     }
 
     public String getName() {
