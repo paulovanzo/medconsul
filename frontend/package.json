@@ -9,7 +9,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource/jost": "^4.5.12",
+    "@fontsource/kodchasan": "^4.5.11",
     "@types/react-icons": "^3.0.0",
+    "mdb-react-ui-kit": "^4.2.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.5.0",
     "react-dom": "^18.2.0",
