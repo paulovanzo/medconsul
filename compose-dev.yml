@@ -1,8 +1,8 @@
 version: "3.8"
 services:
   medconsul-frontend-nginx:
+    image: medconsul-frontend-dev
     build:
-      image: medconsul-frontend-dev
       context: ./frontend/
       dockerfile: devops/Dockerfile
       target: dev
@@ -24,8 +24,8 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_DB: postgres
   medconsul-backend:
+    image: medconsul-backend-dev
     build:
-      image: medconsul-backend-dev
       context: ./backend/
       dockerfile: devops/Dockerfile
       target: dev
