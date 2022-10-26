@@ -6,6 +6,7 @@ type Props = {
 
 type ContextData = {
   handleGoBack: () => void,
+  handleRegister: (data:any) => Promise<void>,
   handleLogin: (data:any) => Promise<void>,
   handleLogout: () => void,
 }
@@ -13,6 +14,13 @@ type ContextData = {
 const Context = createContext<ContextData>({} as ContextData);
 
 const AuthProvider = ({ children }: Props) => {
+  async function handleRegister(data: any) {
+    const { id } = data
+    localStorage.setItem("authenticated","true")
+    window.history.pushState({},"","/");
+    window.location.reload();
+  }
+
   async function handleLogin(data: any) {
     const { id } = data
     localStorage.setItem("authenticated","true")
@@ -34,7 +42,7 @@ const AuthProvider = ({ children }: Props) => {
   }
 
   return (
-    <Context.Provider value={{ handleGoBack, handleLogin, handleLogout}}>
+    <Context.Provider value={{ handleGoBack, handleRegister, handleLogin, handleLogout}}>
       {children}
     </Context.Provider>
   )
