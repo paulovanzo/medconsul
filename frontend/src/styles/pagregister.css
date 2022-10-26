@@ -37,8 +37,8 @@
 }
 
 .image-register {
-    width: 300px;
-    height: 200px;
+    width: 350px;
+    height: 400px;
     background-color: #FFFFFF;
     border-radius: 10px 0px 0px 10px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -50,8 +50,8 @@
 }
 
 .container-form-register {
-    width: 300px;
-    height: 200px;
+    width: 350px;
+    height: 400px;
     background-color: #02B39A;
     border-radius: 0px 10px 10px 0px;
     display: flex;
@@ -61,7 +61,7 @@
 }
 
 .mb-3 {
-    display: grid;
+    display: table-caption;
     justify-items: baseline;
 }
 
