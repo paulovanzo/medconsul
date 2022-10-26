@@ -1,6 +1,7 @@
 package app.medconsul.entities;
 
 import java.util.List;
+import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -29,7 +30,7 @@ public class Doctor {
     public String phoneNumber;
 
     @Column
-    public String specialty;
+    public String speciality;
 
     @OneToMany(targetEntity = Address.class, cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "doctor_fk", referencedColumnName = "id")
@@ -39,14 +40,14 @@ public class Doctor {
         this.name = "";
         this.crm = "";
         this.phoneNumber = "";
-        this.specialty = "";
+        this.speciality = "";
     }
 
-    public Doctor(String name, String crm, String phoneNumber, String specialty) {
+    public Doctor(String name, String crm, String phoneNumber, String speciality) {
         this.name = name;
         this.crm = crm;
         this.phoneNumber = phoneNumber;
-        this.specialty = specialty;
+        this.speciality = speciality;
     }
 
     public String getName() {
@@ -61,12 +62,12 @@ public class Doctor {
         this.crm = crm;
     }
 
-    public String getSpecialty() {
-        return specialty;
+    public String getSpeciality() {
+        return speciality;
     }
 
-    public void setSpecialty(String specialty) {
-        this.specialty = specialty;
+    public void setSpeciality(String speciality) {
+        this.speciality = speciality;
     }
 
     public String getPhoneNumber() {
@@ -94,13 +95,25 @@ public class Doctor {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Doctor doctor)) return false;
+        return id.equals(doctor.id) && Objects.equals(name, doctor.name) && Objects.equals(crm, doctor.crm) && Objects.equals(phoneNumber, doctor.phoneNumber) && Objects.equals(speciality, doctor.speciality) && Objects.equals(addresses, doctor.addresses);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, crm, phoneNumber, speciality, addresses);
+    }
+
+    @Override
     public String toString() {
         return "Doctor{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", crm='" + crm + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
-                ", specialty='" + specialty + '\'' +
+                ", speciality='" + speciality + '\'' +
                 ", addresses=" + addresses +
                 '}';
     }

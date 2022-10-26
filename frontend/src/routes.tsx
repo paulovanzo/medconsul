@@ -1,7 +1,7 @@
 import {
   BrowserRouter,
   Routes,
-  Route
+  Route 
 } from "react-router-dom";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 import CreatePatient from "./pages/CreatePatient";

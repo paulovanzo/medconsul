@@ -17,7 +17,7 @@ function ListDoctor() {
     const [listDoctor, setListDoctor] = useState<Array<Doctor>>([]);
 
     async function fetchData(){
-        api.get<Array<Doctor>>("http://localhost:8080/doctors").then((res) => { console.log(res.data); setListDoctor(res.data)})
+        api.get<Array<Doctor>>("/api/v1/doctors").then((res) => { console.log(res.data); setListDoctor(res.data)})
     }
 
     useEffect(() => {
@@ -48,10 +48,10 @@ function ListDoctor() {
                             <th>Telefone</th> 
                             <th>Genero</th> 
                         </tr>
-                        {listDoctor && listDoctor.map((doctor) => { 
+                        {listDoctor && listDoctor.map((doctor: Doctor) => { 
                             return (
                                 <tr> 
-                                    <td></td> 
+                                    <td>{doctor.name}</td> 
                                     <td></td> 
                                     <td></td> 
                                     <td><div className='menu_tooltip'  onClick={handleClick} style={{ display:isShown ? 'block' : 'none' }}>:<div className='menu_tooltip_options'><p>editar</p><hr /><p>deletar</p></div></div></td> 

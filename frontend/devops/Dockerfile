@@ -13,4 +13,3 @@ COPY --from=builder /srv/app/build/ /usr/share/nginx/html/
 
 FROM base as dev
 ENTRYPOINT ["/bin/bash", "-c", "yarn dev"]
-EXPOSE 3000

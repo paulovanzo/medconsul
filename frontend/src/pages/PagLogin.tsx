@@ -13,21 +13,20 @@ function PagLogin() {
   
     const [errs, setErrs] = useState({
       password: false
-    })
+    })    
 
     async function handleSubmit(event: FormEvent) {
         event.preventDefault();
     
-        await api.post('login', {
+        await api.post('/login', {
           username: username,
           password: password
         }).then(response => {
           const data = response.data;
+          localStorage.setItem('id', data.id)
+          localStorage.setItem('name', data.name)
 
-          localStorage.setItem('token', data.token)
-          localStorage.setItem('username', data.user.username)
-    
-          handleLogin(data);
+          handleLogin(data)
         }).catch(e => {
           if (e) {
             setErrs({...errs, password: true})
