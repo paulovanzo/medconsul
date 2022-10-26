@@ -1,7 +1,9 @@
-FROM openjdk:17-alpine as base
+FROM openjdk:17-alpine as dep
+RUN apk add --no-cache curl tar bash procps maven
+
+FROM dep as base 
 RUN mkdir /srv/app
 COPY . /srv/app
-RUN apk add --no-cache curl tar bash procps maven
 WORKDIR /srv/app
 RUN mvn clean install
 

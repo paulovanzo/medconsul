@@ -1,5 +1,4 @@
-import { createContext, useState, ReactNode } from "react";
-import { createBrowserHistory } from "history";
+import { createContext, ReactNode } from "react";
 
 type Props = {
     children?: ReactNode
@@ -7,49 +6,35 @@ type Props = {
 
 type ContextData = {
   handleGoBack: () => void,
-  handleLogin: (data: any) => Promise<void>,
+  handleLogin: (data:any) => Promise<void>,
   handleLogout: () => void,
-  authenticated: boolean,
 }
 
-const initialContext = {
-  handleGoBack: () => {},
-  handleLogin: async(data: any) => {},
-  handleLogout: () => {},
-  authenticated: false,
-}
+const Context = createContext<ContextData>({} as ContextData);
 
-const Context = createContext<ContextData>(initialContext);
-
-function AuthProvider({ children }: Props) {
-  const [authenticated, setAuthenticated] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const history = createBrowserHistory();
-
+const AuthProvider = ({ children }: Props) => {
   async function handleLogin(data: any) {
-    const { user: { id } } = data
-    setAuthenticated(true);
-    history.push(`/`);
+    const { id } = data
+    localStorage.setItem("authenticated","true")
+    window.history.pushState({},"","/");
     window.location.reload();
   }
 
   const handleLogout = () => {
-    setAuthenticated(false);
+    localStorage.setItem("authenticated","false");
 
     localStorage.clear();
 
-    history.push('/login')
+    window.history.pushState({},"","/login");
     window.location.reload();
   }
 
   const handleGoBack = () => {
-    history.back();
+    window.history.back();
   }
 
-  if (loading) return <p>Loading ...</p>
-
   return (
-    <Context.Provider value={{ handleGoBack,handleLogin,handleLogout, authenticated}}>
+    <Context.Provider value={{ handleGoBack, handleLogin, handleLogout}}>
       {children}
     </Context.Provider>
   )

@@ -1,11 +1,29 @@
 import '../styles/listpatient.css' 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import '../styles/pagpatient.css' 
 import { AiFillHome } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
+import api from "../utils/api"
+
+type Patient = {
+    name: string,
+    crm: string,
+    phoneNumber: string,
+    birthday: Date,
+}
 
 function ListPatient() { 
     const [isShown, setIsShown] = useState(true); 
+    const [listPatient, setListPatient] = useState<Array<Patient>>([]);
+
+    async function fetchData(){
+        api.get<Array<Patient>>("/api/v1/patients").then((res) => { console.log(res.data); setListPatient(res.data)})
+    }
+
+    useEffect(() => {
+        fetchData()
+    }, [])
+    
  
     const handleClick = () => { 
         setIsShown(!isShown)
@@ -31,25 +49,16 @@ function ListPatient() {
                             <th>Telefone</th> 
                             <th>Genero</th> 
                         </tr> 
-                        <tr> 
-                            <td></td> 
-                            <td></td> 
-                            <td></td> 
-                            <td><div className='menu_tooltip'  onClick={handleClick} style={{ display:isShown ? 'block' : 'none' }}>:<div className='menu_tooltip_options'><p>editar</p><hr /><p>deletar</p></div></div></td> 
-                        </tr> 
-                        <tr> 
-                            <td></td> 
-                            <td></td> 
-                            <td></td> 
-                            <td><div className='menu_tooltip'>:<div className='menu_tooltip_options'><p>editar</p><hr /><p>deletar</p></div></div></td> 
-                        </tr> 
-                        <tr> 
-                            <td></td> 
-                            <td></td> 
-                            <td></td> 
-                            <td><div className='menu_tooltip'>:<div className='menu_tooltip_options'><p>editar</p><hr /><p>deletar</p></div></div></td> 
- 
-                        </tr> 
+                        {listPatient && listPatient.map((patient: Patient) => { 
+                            return (
+                                <tr> 
+                                    <td>{patient.name}</td> 
+                                    <td></td> 
+                                    <td></td> 
+                                    <td><div className='menu_tooltip'  onClick={handleClick} style={{ display:isShown ? 'block' : 'none' }}>:<div className='menu_tooltip_options'><p>editar</p><hr /><p>deletar</p></div></div></td> 
+                                </tr>
+                            )   
+                        })}
                     </table> 
                 </div> 
             </body> 

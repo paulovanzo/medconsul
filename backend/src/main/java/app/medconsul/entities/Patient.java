@@ -94,8 +94,8 @@ public class Patient {
         return getClass().hashCode();
     }
 
-    @java.lang.Override
-    public java.lang.String toString() {
+    @Override
+    public String toString() {
         return "Patient{" +
                 "name='" + name + '\'' +
                 ", email='" + email + '\'' +
