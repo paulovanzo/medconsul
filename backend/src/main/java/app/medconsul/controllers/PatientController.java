@@ -2,17 +2,12 @@ package app.medconsul.controllers;
 
 import java.util.List;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import app.medconsul.entities.Patient;
+import app.medconsul.entities.DTO.PatientDTO;
 import app.medconsul.services.PatientService;
 
 @RestController
@@ -32,5 +27,15 @@ public class PatientController {
     @PostMapping(value = "/patient")
     public ResponseEntity<Patient> createPatient( @RequestBody Patient patient){
         return ResponseEntity.ok(patientService.save(patient));
+    }
+
+    @PutMapping(value = "/patient/{id}", produces = "application/json", consumes = "application/json")
+    public ResponseEntity<Patient> editPatient(@PathVariable long id, @RequestBody PatientDTO patient) throws Exception {
+        return ResponseEntity.ok(patientService.edit(patient));
+    }
+
+    @GetMapping(value = "/patient/{id}", produces = "application/json")
+    public ResponseEntity<Patient> getPatient(@PathVariable long id) throws Exception {
+        return ResponseEntity.ok(patientService.findById(id));
     }
 }
