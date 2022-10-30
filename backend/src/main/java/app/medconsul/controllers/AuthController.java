@@ -20,7 +20,7 @@ public class AuthController {
     public ResponseEntity<?> createAuthenticationToken(@RequestBody UserDTO userDTO) throws Exception {
         User user = userService.getUser(userDTO.getUsername());
         if ( user == null) {
-            return new ResponseEntity<>("", HttpStatus.FORBIDDEN);
+            return new ResponseEntity<>("User not found", HttpStatus.FORBIDDEN);
         } else {
             return ResponseEntity.ok(user);
         }

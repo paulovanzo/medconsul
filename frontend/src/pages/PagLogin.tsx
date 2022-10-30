@@ -2,6 +2,7 @@ import '../styles/paglogin.css'
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import api from '../utils/api';
+import imgLogin from "../icons/img-login.png"
 import { Context } from "../contexts/AuthContext"
 import { FormEvent, useContext, useState } from 'react';
 
@@ -48,7 +49,7 @@ function PagLogin() {
                 </div>
                 <div className='body'>
                     <div className='image-login'>
-                        <img src="src\icons\img-login.png" />
+                        <img src={imgLogin} />
                     </div>
                     <div className='container-form-login'>
                         <div className='form-login'>
