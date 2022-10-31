@@ -7,7 +7,7 @@ import api from "../utils/api";
 
 type Patient = {
   name: string;
-  crm: string;
+  cpf: string;
   phoneNumber: string;
   birthday: Date;
 };
@@ -58,8 +58,8 @@ function ListPatient() {
                 return (
                   <tr>
                     <td>{patient.name}</td>
-                    <td></td>
-                    <td></td>
+                    <td>{patient.cpf}</td>
+                    <td>{patient.phoneNumber}</td>
                     <td>
                       <div
                         className="menu_tooltip"
@@ -83,5 +83,3 @@ function ListPatient() {
     </div>
   );
 }
-
-export default ListPatient;

@@ -7,6 +7,7 @@ import PagDoctor from "./pages/PagDoctor";
 import PagPatient from "./pages/PagPatient";
 import PagLogin from "./pages/PagLogin";
 import PagRegister from "./pages/PagRegister";
+import PagProfile from "./pages/PagProfile";
 
 export function Router() {
   return (
