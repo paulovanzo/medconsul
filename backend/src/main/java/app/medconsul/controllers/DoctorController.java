@@ -25,17 +25,17 @@ public class DoctorController {
     
 
     @PostMapping(value = "/doctor", consumes = "application/json")
-    public ResponseEntity<Doctor> createDoctor( @RequestBody DoctorDTO doctor) throws Exception {
+    public ResponseEntity<Doctor> createDoctor( @RequestBody DoctorDTO doctor){
         return ResponseEntity.ok(doctorService.save(doctor));
     }
     
     @PutMapping(value = "/doctor/{id}", produces = "application/json", consumes = "application/json")
-    public ResponseEntity<Doctor> editDoctor(@PathVariable long id, @RequestBody DoctorDTO doctor) throws Exception {
+    public ResponseEntity<Doctor> editDoctor(@PathVariable long id, @RequestBody DoctorDTO doctor){
         return ResponseEntity.ok(doctorService.edit(doctor));
     }
 
     @GetMapping(value = "/doctor/{id}", produces = "application/json")
-    public ResponseEntity<Doctor> editDoctor(@PathVariable long id) throws Exception {
+    public ResponseEntity<Doctor> editDoctor(@PathVariable long id){
         return ResponseEntity.ok(doctorService.findById(id));
     }
 

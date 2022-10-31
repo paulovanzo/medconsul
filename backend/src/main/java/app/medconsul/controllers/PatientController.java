@@ -30,12 +30,12 @@ public class PatientController {
     }
 
     @PutMapping(value = "/patient/{id}", produces = "application/json", consumes = "application/json")
-    public ResponseEntity<Patient> editPatient(@PathVariable long id, @RequestBody PatientDTO patient) throws Exception {
+    public ResponseEntity<Patient> editPatient(@PathVariable long id, @RequestBody PatientDTO patient){
         return ResponseEntity.ok(patientService.edit(patient));
     }
 
     @GetMapping(value = "/patient/{id}", produces = "application/json")
-    public ResponseEntity<Patient> getPatient(@PathVariable long id) throws Exception {
+    public ResponseEntity<Patient> getPatient(@PathVariable long id){
         return ResponseEntity.ok(patientService.findById(id));
     }
 }
