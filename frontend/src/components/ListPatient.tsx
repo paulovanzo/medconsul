@@ -37,7 +37,7 @@ function ListPatient() {
                 <label> Paciente</label> 
             </div> 
             <div className='filter-create'> 
-                <input type="text" id='seach-patient' placeholder='Campo de busca' /> 
+                <input type="text" id='search-patient' placeholder='Campo de busca' /> 
                 <Link to="../patient/createNewPatient"><button id='new-patient'>Cadastrar novo paciente</button></Link> 
             </div> 
             <body className='body-menu'> 
