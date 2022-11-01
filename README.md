@@ -4,7 +4,7 @@ Aplicação de consultas médicas a ser desenvolvida durante a disciplina de Pro
 
 # Instalação e Setup
 
-Ao instalar o [docker-compose](https://docs.docker.com/compose/), esteja no diretório do projeto medconsul e execute o comando:
+Ao instalar o [docker-compose](https://docs.docker.com/compose/), esteja no diretório do projeto `medconsul` e execute o comando:
 
     docker-compose up -d
 
