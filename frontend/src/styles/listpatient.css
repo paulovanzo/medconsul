@@ -1,56 +1,56 @@
-table { 
-    color: #333; 
-    font-family: Helvetica, Arial, sans-serif; 
-    width: 100%; 
-    border-collapse: collapse; 
-    border-spacing: 0; 
-  } 
-   
-  td, 
-  th { 
-    border: 0 none; 
-    height: 30px; 
-  } 
-   
-  th { 
-    background: #9ed2c6; 
-    font-weight: bold; 
-    height: 40px; 
-  } 
-   
-  td { 
-    background: #FAFAFA; 
-    text-align: center; 
-  } 
-   
-  tr:nth-child(even) td { 
-    background: #dde5e4; 
-  } 
-   
-  tr:nth-child(odd) td { 
-    background: #f3f7f6; 
-  } 
-   
-  .menu_tooltip { 
-    display: flex; 
-    float: right; 
-    margin-right: 20px; 
-    display: block; 
-  } 
-   
-  .menu_tooltip_options { 
-    display: none; 
-    position: absolute; 
-    background: white; 
-    font-size: 10px; 
-    width: 50px; 
-  }
-
-  .form-label{
-    size: 20px;
-    margin: 15px;
+table {
+  color: #333;
+  font-family: Helvetica, Arial, sans-serif;
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
-a{
+td,
+th {
+  border: 0 none;
+  height: 30px;
+}
+
+th {
+  background: #9ed2c6;
+  font-weight: bold;
+  height: 40px;
+}
+
+td {
+  background: #fafafa;
+  text-align: center;
+}
+
+tr:nth-child(even) td {
+  background: #dde5e4;
+}
+
+tr:nth-child(odd) td {
+  background: #f3f7f6;
+}
+
+.menu_tooltip {
+  display: flex;
+  float: right;
+  margin-right: 20px;
+  display: block;
+}
+
+.menu_tooltip_options {
+  display: none;
+  position: absolute;
+  background: white;
+  font-size: 10px;
+  width: 50px;
+}
+
+.form-label {
+  size: 20px;
+  margin: 15px;
+}
+
+a {
   margin: 0px 5px 0px 5px;
 }

@@ -1,18 +1,36 @@
 version: "3.8"
 services:
   medconsul-frontend-nginx:
-    build: 
+    build:
       context: ./frontend/
       dockerfile: devops/Dockerfile
+      target: app
     restart: unless-stopped
     ports:
       - 80:80
     depends_on:
       - medconsul-backend
+  database:
+    image: postgres:13
+    restart: always
+    container_name: database
+    ports:
+      - 5432:5432
+    volumes:
+      - ./dbfiles:/var/lib/postgres/data
+    environment:
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_USER: postgres
+      POSTGRES_DB: postgres
   medconsul-backend:
     build:
       context: ./backend/
       dockerfile: devops/Dockerfile
+      target: app
     restart: unless-stopped
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://database:5432/postgres
     ports:
-      - 8000:8080
+      - 8080:8080
+    depends_on:
+      - database

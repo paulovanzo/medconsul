@@ -8,4 +8,10 @@ Ao instalar o [docker-compose](https://docs.docker.com/compose/), esteja no dire
 
     docker-compose up -d
 
-O backend estará respondendo na porta 8080 e o frontend na porta 80
+O backend estará respondendo na porta 8080 e o frontend na porta 80.
+
+Para desenvolimento, utilize o compose-dev.yml
+
+    docker-compose -f compose-dev.yml up --build -d 
+
+Quando em desenvolvimento o frontend responderá na porta 3000.

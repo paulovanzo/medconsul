@@ -1,0 +1,105 @@
+@import "@fontsource/kodchasan";
+@import "@fontsource/jost";
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+:root {
+  background-color: #f6f6f6;
+}
+
+.container-login {
+  display: block;
+  text-align: center;
+  margin: 10%;
+}
+
+#logo-frist-name {
+  color: #028f7b;
+  font-family: "Kodchasan";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 60px;
+}
+
+#logo-lest-name {
+  color: #2a464f;
+  font-family: "Kodchasan";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 60px;
+}
+
+.body {
+  display: inline-flex;
+}
+
+.image-login {
+  width: 300px;
+  height: 200px;
+  background-color: #ffffff;
+  border-radius: 10px 0px 0px 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.image-login img {
+  width: 300px;
+  height: 200px;
+}
+
+.container-form-login {
+  width: 300px;
+  height: 200px;
+  background-color: #02b39a;
+  border-radius: 0px 10px 10px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.mb-3 {
+  display: grid;
+  justify-items: baseline;
+}
+
+.form-label {
+  font-family: "jost";
+  font-weight: 400;
+  font-size: smaller;
+  color: #ffff;
+  line-height: 27px;
+}
+
+.form-control {
+  background: #fefefe;
+  border: 1px solid #2a464f;
+  border-radius: 5px;
+  box-sizing: border-box;
+  width: 200px;
+  height: 25px;
+  padding: 10px;
+  font-size: 10px;
+}
+
+textarea:focus,
+input:focus,
+select:focus {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border: 0 none;
+  outline: 0;
+}
+
+.btn-primary {
+  margin: 15px;
+  background: #2a464f;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+  border-radius: 5px;
+  color: white;
+  width: 100px;
+  border: none;
+  height: 25px;
+  cursor: pointer;
+}
