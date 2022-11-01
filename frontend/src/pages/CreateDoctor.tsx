@@ -22,6 +22,8 @@ function CreateDoctor() {
       phoneNumber: phone,
       speciality: speciality,
     });
+
+    window.history.pushState({},"","/doctor")
   }
 
   return (

@@ -2,6 +2,7 @@ import "../styles/pagregister.css"; // Criar estilo para Registro
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import api from "../utils/api";
+import imgRegister from "../icons/img-register.png"
 import { Context } from "../contexts/AuthContext";
 import { FormEvent, useContext, useState } from "react";
 
@@ -44,7 +45,7 @@ function PagRegister() {
         </div>
         <div className="body">
           <div className="image-register">
-            <img src="src\icons\img-register.png" />
+            <img src={imgRegister} />
           </div>
           <div className="container-form-register">
             <div className="form-register">

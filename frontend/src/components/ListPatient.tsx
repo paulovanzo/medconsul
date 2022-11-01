@@ -12,7 +12,7 @@ type Patient = {
   birthday: Date;
 };
 
-function ListPatient() {
+export default function ListPatient() {
   const [isShown, setIsShown] = useState(true);
   const [listPatient, setListPatient] = useState<Array<Patient>>([]);
 

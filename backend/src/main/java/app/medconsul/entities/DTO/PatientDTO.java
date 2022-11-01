@@ -28,6 +28,29 @@ public class PatientDTO {
 
     public String urlImage;
 
+    public PatientDTO() {
+        this.name = "";
+        this.cpf = "";
+        this.phoneNumber = "";
+        this.email = "";
+        this.birthday = LocalDate.MIN;
+    }
+
+    public PatientDTO(String name, String cpf, String phoneNumber, String email) {
+        this.name = name;
+        this.cpf = cpf;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+    }
+
+    public PatientDTO(String name, String cpf, String phoneNumber, String email, String urlImage) {
+        this.name = name;
+        this.cpf = cpf;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.urlImage = urlImage;
+    }
+
     public Long getId() {
         return id;
     }

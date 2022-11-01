@@ -22,6 +22,8 @@ function CreatePatient() {
       phone: phone,
       email: email,
     });
+
+    window.history.pushState({},"","/patient")
   }
 
   return (

@@ -11,7 +11,7 @@ import app.medconsul.entities.DTO.PatientDTO;
 import app.medconsul.services.PatientService;
 
 @RestController
-@RequestMapping(value = "/api/v1", produces = "application/json")
+@RequestMapping(value = "/api/v1")
 @CrossOrigin
 public class PatientController {
 
@@ -24,7 +24,7 @@ public class PatientController {
         return ResponseEntity.ok(docs);
     }
 
-    @PostMapping(value = "/patient")
+    @PostMapping(value = "/patient", consumes = "application/json")
     public ResponseEntity<Patient> createPatient( @RequestBody Patient patient){
         return ResponseEntity.ok(patientService.save(patient));
     }
