@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import app.medconsul.entities.DTO.PatientDTO;
 import app.medconsul.entities.Patient;
 import app.medconsul.repositories.IPatientRepository;
 
@@ -21,7 +22,23 @@ public class PatientService implements IPatientService {
 
     @Override
     public Patient save(Patient patient) {
-        return patientRepository.save(patient);
+        Patient pat = new Patient(patient.getName(),patient.getEmail(),patient.getPhoneNumber());
+
+        return patientRepository.save(pat);
+    }
+
+    public Patient edit(PatientDTO tmpPatient) {
+        Patient pat = patientRepository.findById(tmpPatient.getId()).orElseThrow(IllegalArgumentException::new);
+        pat.setName(tmpPatient.getName());
+        pat.setEmail(tmpPatient.getEmail());
+        pat.setPhoneNumber(tmpPatient.getPhoneNumber());
+        pat.setUrlImage(tmpPatient.getUrlImage());
+
+        return patientRepository.save(pat);
+    }
+
+    public Patient findById(Long id){
+        return patientRepository.findById(id).orElseThrow(IllegalArgumentException::new);
     }
 
 }

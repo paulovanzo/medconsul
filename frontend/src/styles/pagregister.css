@@ -2,104 +2,104 @@
 @import "@fontsource/jost";
 
 * {
-    margin: 0px;
-    padding: 0px;
+  margin: 0px;
+  padding: 0px;
 }
 
-:root{
-    background-color: #f6f6f6;
+:root {
+  background-color: #f6f6f6;
 }
 
 .container-register {
-    display: block;
-    text-align: center;
-    margin: 10%;
+  display: block;
+  text-align: center;
+  margin: 10%;
 }
 
 #logo-frist-name {
-    color: #028F7B;
-    font-family: 'Kodchasan';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 60px;
+  color: #028f7b;
+  font-family: "Kodchasan";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 60px;
 }
 
 #logo-lest-name {
-    color: #2A464F;
-    font-family: 'Kodchasan';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 60px;
+  color: #2a464f;
+  font-family: "Kodchasan";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 60px;
 }
 
 .body {
-    display: inline-flex;
+  display: inline-flex;
 }
 
 .image-register {
-    width: 350px;
-    height: 400px;
-    background-color: #FFFFFF;
-    border-radius: 10px 0px 0px 10px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  width: 350px;
+  height: 400px;
+  background-color: #ffffff;
+  border-radius: 10px 0px 0px 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .image-register img {
-    width: 300px;
-    height: 200px;
+  width: 300px;
+  height: 200px;
 }
 
 .container-form-register {
-    width: 350px;
-    height: 400px;
-    background-color: #02B39A;
-    border-radius: 0px 10px 10px 0px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  width: 350px;
+  height: 400px;
+  background-color: #02b39a;
+  border-radius: 0px 10px 10px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .mb-3 {
-    display: table-caption;
-    justify-items: baseline;
+  display: table-caption;
+  justify-items: baseline;
 }
 
 .form-label {
-    font-family: 'jost';
-    font-weight: 400;
-    font-size: smaller;
-    color: #ffff;
-    line-height: 27px;
+  font-family: "jost";
+  font-weight: 400;
+  font-size: smaller;
+  color: #ffff;
+  line-height: 27px;
 }
 
 .form-control {
-    background: #FEFEFE;
-    border: 1px solid #2A464F;
-    border-radius: 5px;
-    box-sizing: border-box;
-    width: 200px;
-    height: 25px;
-    padding: 10px;
-    font-size: 10px;
+  background: #fefefe;
+  border: 1px solid #2a464f;
+  border-radius: 5px;
+  box-sizing: border-box;
+  width: 200px;
+  height: 25px;
+  padding: 10px;
+  font-size: 10px;
 }
 
 textarea:focus,
 input:focus,
 select:focus {
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border: 0 none;
-    outline: 0;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border: 0 none;
+  outline: 0;
 }
 
 .btn-primary {
-    margin: 15px;
-    background: #2A464F;
-    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
-    border-radius: 5px;
-    color: white;
-    width: 100px;
-    border: none;
-    height: 25px;
-    cursor: pointer;
+  margin: 15px;
+  background: #2a464f;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+  border-radius: 5px;
+  color: white;
+  width: 100px;
+  border: none;
+  height: 25px;
+  cursor: pointer;
 }

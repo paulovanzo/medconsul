@@ -1,13 +1,13 @@
 import { Navigate } from "react-router-dom";
 
 type Props = {
-    children: React.ReactComponentElement<any,any>
-}
+  children: React.ReactComponentElement<any, any>;
+};
 
-export const ProtectedRoute = ({ children } : Props) => {
+export const ProtectedRoute = ({ children }: Props) => {
   if (localStorage.getItem("authenticated") !== "true") {
     return <Navigate to="/login" />;
-  }else{
+  } else {
     return children;
   }
 };

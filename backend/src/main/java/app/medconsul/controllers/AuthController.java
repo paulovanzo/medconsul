@@ -17,7 +17,7 @@ public class AuthController {
     private UserService userService;
 
     @PostMapping(value = "/login")
-    public ResponseEntity<?> createAuthenticationToken(@RequestBody UserDTO userDTO) throws Exception {
+    public ResponseEntity<?> createAuthenticationToken(@RequestBody UserDTO userDTO){
         User user = userService.getUser(userDTO.getUsername());
         if ( user == null) {
             return new ResponseEntity<>("User not found", HttpStatus.FORBIDDEN);
@@ -27,7 +27,7 @@ public class AuthController {
     }
 
     @PostMapping(value = "/register")
-    public ResponseEntity<?> saveUser(@RequestBody UserDTO user) throws Exception {
+    public ResponseEntity<?> saveUser(@RequestBody UserDTO user){
         return ResponseEntity.ok(userService.save(user));
     }
 

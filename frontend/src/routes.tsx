@@ -1,8 +1,4 @@
-import {
-  BrowserRouter,
-  Routes,
-  Route 
-} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 import CreatePatient from "./pages/CreatePatient";
 import CreateDoctor from "./pages/CreateDoctor";
@@ -16,7 +12,6 @@ import PagDoctorProfile from "./pages/PagDoctorProfile";
 import PagPatientProfile from "./pages/PagPatientProfile";
 
 export function Router() {
-
     return ( 
         <BrowserRouter>
             <Routes>

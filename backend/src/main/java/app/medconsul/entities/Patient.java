@@ -7,6 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.time.LocalDate;
+import java.time.Month;
 
 @Entity
 @Table(name = "patient")
@@ -27,7 +28,7 @@ public class Patient {
     @Column(nullable = false)
     public String phoneNumber;
 
-    @Column(nullable = false)
+    @Column
     public LocalDate birthday;
 
     public enum Gender {
@@ -41,6 +42,35 @@ public class Patient {
 
     @Column
     public String urlImage;
+
+    public Patient(){
+        this.name = "";
+        this.cpf = "";
+        this.phoneNumber = "";
+        this.email = "";
+        this.birthday = LocalDate.MIN;
+    }
+
+    public Patient(String name, String phoneNumber, String email) {
+        this.name = name;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+    }
+
+    public Patient(String name, String cpf, String phoneNumber, String email) {
+        this.name = name;
+        this.cpf = cpf;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+    }
+
+    public Patient(String name, String cpf, String phoneNumber, String email, String urlImage) {
+        this.name = name;
+        this.cpf = cpf;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.urlImage = urlImage;
+    }
 
     public Long getId() {
         return id;
