@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-function PagProfile() {
+function PagDoctorProfile() {
 
     return (
         <><div className="head-main">
@@ -51,7 +51,7 @@ function PagProfile() {
                             <Col>
                             <Form.Group className="mb-3" controlId="formphone">
                                 <Form.Label>Telefone: </Form.Label>
-                                <Form.Control type="number" placeholder="(84) 9 9282-4567"/>
+                                <Form.Control type="text" placeholder="(84) 9 9282-4567"/>
                             </Form.Group>
                             </Col>
                         </Row>
@@ -59,7 +59,7 @@ function PagProfile() {
                             <Col>
                             <Form.Group className="mb-3" controlId="formFormation">
                                 <Form.Label>Descrição geral: </Form.Label>
-                                <Form.Control type="texttextarea" placeholder="Lorem Ipsun"/>
+                                <Form.Control type="textarea" placeholder="Lorem Ipsun"/>
                             </Form.Group>
                             </Col>
                         </Row>
@@ -74,4 +74,4 @@ function PagProfile() {
       )
 }
 
-export default PagProfile
+export default PagDoctorProfile

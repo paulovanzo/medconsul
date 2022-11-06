@@ -11,7 +11,9 @@ import PagDoctor from "./pages/PagDoctor";
 import PagPatient from "./pages/PagPatient";
 import PagLogin from "./pages/PagLogin";
 import PagRegister from "./pages/PagRegister";
-import PagProfile from "./pages/PagProfile";
+import PagAppointment from "./pages/PagAppointment";
+import PagDoctorProfile from "./pages/PagDoctorProfile";
+import PagPatientProfile from "./pages/PagPatientProfile";
 
 export function Router() {
 
@@ -23,11 +25,6 @@ export function Router() {
                 <Route path='/' element={
                     <ProtectedRoute>
                         <MainPage/>
-                    </ProtectedRoute>}
-                />
-                <Route path='/profile' element={
-                    <ProtectedRoute>
-                        <PagProfile/>
                     </ProtectedRoute>}
                 />
                 <Route path="/patient" element={
@@ -49,6 +46,21 @@ export function Router() {
                     <ProtectedRoute>
                         <CreateDoctor/>
                     </ProtectedRoute>} 
+                />
+                <Route path='/patient/profile' element={
+                    <ProtectedRoute>
+                        <PagPatientProfile/>
+                    </ProtectedRoute>}
+                />
+                <Route path='/doctor/profile' element={
+                    <ProtectedRoute>
+                        <PagDoctorProfile/>
+                    </ProtectedRoute>}
+                />
+                <Route path="/appointment" element={
+                    <ProtectedRoute>
+                        <PagAppointment />
+                    </ProtectedRoute>}
                 />
             </Routes>
         </BrowserRouter>
