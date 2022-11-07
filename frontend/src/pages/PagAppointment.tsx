@@ -1,20 +1,19 @@
 import '../styles/mainpage.css'
+import '../styles/pagappointment.css'
 import Header from '../components/Header'
 import Schedule from '../components/Schedule';
 
 
 function PagAppointment() {
-
-  return (
-    <><div className="head-main">
+    return (
+        <div className="head-main">
           <Header />
         </div>
-        <div className='container-profile'>
+        <div className='container-date'>
             <div className='crumb'>
                 <AiFillHome />
-                <label> Home {'>'} </label>
-                <Link to="/doctor"> Medico {'>'} </Link>
-                <label> Perfil </label>
+                <Link to="/"> Home {'>'} </Link>
+                <label> Agenda </label>
             </div>
             <div className='container-form'>
                 <div className='form-profile'> 
@@ -35,8 +34,10 @@ function PagAppointment() {
                 </div>
             </div>    
         </div>
-        </>
-  )
+        <div className="container-list">
+            <Schedule />
+        </div>
+    )
 }
 
 export default PagAppointment
