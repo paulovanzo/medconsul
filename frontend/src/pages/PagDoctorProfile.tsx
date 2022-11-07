@@ -18,7 +18,7 @@ function PagDoctorProfile() {
                 <AiFillHome />
                 <label> Home {'>'} </label>
                 <Link to="/doctor"> Medico {'>'} </Link>
-                <label> Perfil </label>
+                <label> Perfil do Medico </label>
             </div>
             <div className='container-form'>
                 <div className='form-profile'> 
@@ -49,7 +49,7 @@ function PagDoctorProfile() {
                             </Form.Group>
                             </Col>
                             <Col>
-                            <Form.Group className="mb-3" controlId="formphone">
+                            <Form.Group className="mb-3" controlId="formPhone">
                                 <Form.Label>Telefone: </Form.Label>
                                 <Form.Control type="text" placeholder="(84) 9 9282-4567"/>
                             </Form.Group>
@@ -57,7 +57,7 @@ function PagDoctorProfile() {
                         </Row>
                         <Row>
                             <Col>
-                            <Form.Group className="mb-3" controlId="formFormation">
+                            <Form.Group className="mb-3" controlId="formDesc">
                                 <Form.Label>Descrição geral: </Form.Label>
                                 <Form.Control type="textarea" placeholder="Lorem Ipsun"/>
                             </Form.Group>

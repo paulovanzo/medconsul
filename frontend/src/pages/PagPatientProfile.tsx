@@ -17,8 +17,8 @@ function PagPatientProfile() {
             <div className='crumb'>
                 <AiFillHome />
                 <label> Home {'>'} </label>
-                <Link to="/doctor"> Medico {'>'} </Link>
-                <label> Perfil </label>
+                <Link to="/patient"> Paciente {'>'} </Link>
+                <label> Perfil do Paciente </label>
             </div>
             <div className='container-form'>
                 <div className='form-profile'> 
@@ -31,25 +31,21 @@ function PagPatientProfile() {
                             </Form.Group>
                             </Col>
                             <Col>
-                            <Form.Group className="mb-3" controlId="formEvaluation">
-                                <Form.Label>Avaliação: </Form.Label>
-                                <Form.Check type="radio" label="Muito ruim" id="formEvaluationRadios"/>
-                                <Form.Check type="radio" label="Ruim" id="formEvaluationRadios"/>
-                                <Form.Check type="radio" label="Normal" id="formEvaluationRadios"/>
-                                <Form.Check type="radio" label="Bom" id="formEvaluationRadios"/>
-                                <Form.Check type="radio" label="Muito bom" id="formEvaluationRadios"/>
+                            <Form.Group className="mb-3" controlId="formCPF">
+                                <Form.Label>CPF: </Form.Label>
+                                <Form.Control type="text" placeholder="123.456.789-10"/>
                             </Form.Group>
                             </Col>
                         </Row>
                         <Row>
                             <Col>
-                            <Form.Group className="mb-3" controlId="formFormation">
-                                <Form.Label>Formação: </Form.Label>
-                                <Form.Control type="text" placeholder="Clinico Geral"/>
+                            <Form.Group className="mb-3" controlId="formGenre">
+                                <Form.Label>Genero: </Form.Label>
+                                <Form.Control type="text" placeholder="M"/>
                             </Form.Group>
                             </Col>
                             <Col>
-                            <Form.Group className="mb-3" controlId="formphone">
+                            <Form.Group className="mb-3" controlId="formPhone">
                                 <Form.Label>Telefone: </Form.Label>
                                 <Form.Control type="text" placeholder="(84) 9 9282-4567"/>
                             </Form.Group>
@@ -57,13 +53,13 @@ function PagPatientProfile() {
                         </Row>
                         <Row>
                             <Col>
-                            <Form.Group className="mb-3" controlId="formFormation">
+                            <Form.Group className="mb-3" controlId="formDesc">
                                 <Form.Label>Descrição geral: </Form.Label>
                                 <Form.Control type="textarea" placeholder="Lorem Ipsun"/>
                             </Form.Group>
                             </Col>
                         </Row>
-                        <Link to="../doctor"><Button>Voltar</Button></Link>
+                        <Link to="../patient"><Button>Voltar</Button></Link>
                         <Button type="submit">Salvar</Button>
                     </Form>
                 </div>
