@@ -10,6 +10,7 @@ import PagRegister from "./pages/PagRegister";
 import PagAppointment from "./pages/PagAppointment";
 import PagDoctorProfile from "./pages/PagDoctorProfile";
 import PagPatientProfile from "./pages/PagPatientProfile";
+import CreateAppointment from "./pages/CreateAppointment";
 
 export function Router() {
     return ( 
@@ -55,6 +56,11 @@ export function Router() {
                 <Route path="/appointment" element={
                     <ProtectedRoute>
                         <PagAppointment />
+                    </ProtectedRoute>}
+                />
+                <Route path="/appointment/createNewAppointment" element={
+                    <ProtectedRoute>
+                        <CreateAppointment />
                     </ProtectedRoute>}
                 />
             </Routes>
