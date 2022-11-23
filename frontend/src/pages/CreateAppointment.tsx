@@ -43,7 +43,7 @@ function CreateAppointment() {
             <Form onSubmit={(e) => handleSubmit(e)} className="form">
               <Form.Group
                 onChange={(e: any) => {
-                  setAppointment(e.target.value);
+                  setPatient(e.target.value);
                 }}
                 className="mb-3"
                 controlId="formPaciente"
