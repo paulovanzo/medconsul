@@ -32,9 +32,9 @@ function PagLogin() {
   return (
     <div className="body-login">
       <div className="container-login">
-        <div className="heade">
-          <label id="logo-frist-name">Med</label>
-          <label id="logo-lest-name">consul</label>
+        <div className="header">
+          <label id="logo-first-name">Med</label>
+          <label id="logo-last-name">consul</label>
         </div>
         <div className="body">
           <div className="image-login">

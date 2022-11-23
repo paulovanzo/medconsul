@@ -1,5 +1,5 @@
 import '../styles/mainpage.css'
-//import '../styles/pagappointment.css'
+import '../styles/pagappointment.css'
 import Header from '../components/Header'
 import Form from "react-bootstrap/Form";
 import { AiFillHome } from "react-icons/ai";
