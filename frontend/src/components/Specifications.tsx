@@ -18,9 +18,13 @@ function Specifications() {
   const [unidade, setUnidade] = useState<Array<Unidade>>([]);
 
   async function fetchData() {
-    api.get<Array<Date>>("/api/v1/specifications").then((res) => {
+    api.get<Array<Especialidade>>("/api/v1/especialidade").then((res) => {
       console.log(res.data);
-      setSpecifications(res.data);
+      setEspecialidade(res.data);
+    });
+    api.get<Array<Unidade>>("/api/v1/unidade").then((res) => {
+      console.log(res.data);
+      setUnidade(res.data);
     });
   }
 
