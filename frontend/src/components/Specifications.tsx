@@ -2,7 +2,6 @@
 import { useState, useEffect } from "react";
 import Form from 'react-bootstrap/Form';
 import api from "../utils/api";
-import Form from "react-bootstrap/Form";
 
 type Especialidade = {
     name: string;
