@@ -14,7 +14,7 @@ type Schedule = {
   item6: string;
 };
 
-export default function Schedule() {
+function Schedule() {
   const [isShown, setIsShown] = useState(true);
   const [schedule, setSchedule] = useState<Array<Schedule>>([]);
 
@@ -92,3 +92,5 @@ export default function Schedule() {
     </div>
   );
 }
+
+export default Schedule;

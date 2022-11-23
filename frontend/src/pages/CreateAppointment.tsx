@@ -1,4 +1,4 @@
-import "../styles/pagcreateappointment.css";
+//import "../styles/pagcreateappointment.css";
 import { AiFillHome } from "react-icons/ai";
 import Header from "../components/Header";
 import Form from "react-bootstrap/Form";
@@ -6,6 +6,8 @@ import Button from "react-bootstrap/Button";
 import api from "../utils/api";
 import { Link } from "react-router-dom";
 import { FormEvent, useState } from "react";
+import Schedule from "../components/Schedule";
+import Specifications from "../components/Specifications";
 
 function CreateAppointment() {
   const [patient, setPatient] = useState("");
@@ -98,6 +100,8 @@ function CreateAppointment() {
             </Form>
           </div>
         </div>
+        <Schedule />
+        <Specifications />
       </div>
     </>
   );

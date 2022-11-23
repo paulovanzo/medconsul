@@ -24,6 +24,13 @@ function Body() {
               <Link to="/doctor">Médico</Link>
             </div>
           </div>
+
+          <div className="item-menu-appointment">
+            <div className="icon-item-menu"></div>
+            <div>
+              <Link to="/appointment">Consulta</Link>
+            </div>
+          </div>
         </div>
       </body>
     </div>
