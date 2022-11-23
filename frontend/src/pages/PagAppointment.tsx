@@ -1,11 +1,15 @@
 import '../styles/mainpage.css'
 import '../styles/pagappointment.css'
+import { Link } from 'react-router-dom';
+import { AiFillHome } from 'react-icons/ai';
+import Form from 'react-bootstrap/Form';
 import Header from '../components/Header'
 import Schedule from '../components/Schedule';
 
 
 function PagAppointment() {
     return (
+    <>
         <div className="head-main">
           <Header />
         </div>
@@ -37,6 +41,7 @@ function PagAppointment() {
         <div className="container-list">
             <Schedule />
         </div>
+    </>
     )
 }
 

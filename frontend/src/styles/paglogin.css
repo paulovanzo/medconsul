@@ -10,13 +10,21 @@
   background-color: #f6f6f6;
 }
 
-.container-login {
-  display: block;
-  text-align: center;
-  margin: 10%;
+.header {
+  max-width: 90%;
 }
 
-#logo-frist-name {
+.container-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  max-width: 90%;
+  margin: 1rem;
+}
+
+#logo-first-name {
   color: #028f7b;
   font-family: "Kodchasan";
   font-style: normal;
@@ -24,7 +32,7 @@
   font-size: 60px;
 }
 
-#logo-lest-name {
+#logo-last-name {
   color: #2a464f;
   font-family: "Kodchasan";
   font-style: normal;
@@ -33,25 +41,36 @@
 }
 
 .body {
-  display: inline-flex;
+  display: flex;
+  margin: 5%;
+  max-width: 90%;
+}
+
+.body-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
 }
 
 .image-login {
-  width: 300px;
-  height: 200px;
+  max-width: 90%;
+  width: 600px;
+  height: 400px;
   background-color: #ffffff;
   border-radius: 10px 0px 0px 10px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .image-login img {
-  width: 300px;
-  height: 200px;
+  max-width: 90%;
+  width: 600px;
+  height: 400px;
 }
 
 .container-form-login {
-  width: 300px;
-  height: 200px;
+  width: 600px;
+  height: 400px;
   background-color: #02b39a;
   border-radius: 0px 10px 10px 0px;
   display: flex;
@@ -60,9 +79,33 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+@media only screen and (max-width: 600px) {
+  .image-login {
+    width: 0px;
+    height: 0px;
+  }
+
+  .image-login img {
+    width: 0px;
+    height: 0px;
+  }
+
+  .container-form-login {
+    border-radius: 10px;
+    
+  }
+}
+
 .mb-3 {
   display: grid;
   justify-items: baseline;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .form-label {

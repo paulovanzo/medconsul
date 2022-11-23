@@ -1,7 +1,6 @@
 import "../styles/appointment.css";
 import { useState, useEffect } from "react";
-import { AiFillHome } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import Form from 'react-bootstrap/Form';
 import api from "../utils/api";
 
 type Especialidade = {

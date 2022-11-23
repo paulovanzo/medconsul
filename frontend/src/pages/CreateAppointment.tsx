@@ -1,4 +1,4 @@
-import "../styles/pagcreateappointment.css";
+import "../styles/pagappointment.css";
 import { AiFillHome } from "react-icons/ai";
 import Header from "../components/Header";
 import Form from "react-bootstrap/Form";

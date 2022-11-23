@@ -4,7 +4,7 @@ import { AiFillHome } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import api from "../utils/api";
 
-type Schedule = {
+type TSchedule = {
   schedule: string;
   item1: string;
   item2: string;
@@ -16,10 +16,10 @@ type Schedule = {
 
 export default function Schedule() {
   const [isShown, setIsShown] = useState(true);
-  const [schedule, setSchedule] = useState<Array<Schedule>>([]);
+  const [schedule, setSchedule] = useState<Array<TSchedule>>([]);
 
   async function fetchData() {
-    api.get<Array<Schedule>>("/api/v1/schedule").then((res) => {
+    api.get<Array<TSchedule>>("/api/v1/schedule").then((res) => {
       console.log(res.data);
       setSchedule(res.data);
     });
@@ -59,7 +59,7 @@ export default function Schedule() {
               <th>Item 6</th>
             </tr>
             {schedule &&
-              schedule.map((schedule: Schedule) => {
+              schedule.map((schedule: TSchedule) => {
                 return (
                   <tr>
                     <td>{schedule.schedule}</td>
