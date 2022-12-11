@@ -3,9 +3,11 @@ import Form from "react-bootstrap/Form";
 import Header from '../components/Header'
 import { Crumb } from '../components/Crumb'
 import Schedule from "../components/Schedule";
+import ListAppointment from '../components/ListAppointment';
 import Specifications from "../components/Specifications";
 import '../styles/mainpage.module.css'
 import '../styles/pagappointment.css'
+
 
 function PagAppointment() {
     return (
@@ -32,8 +34,7 @@ function PagAppointment() {
                     </div>
                 </div>
             </div>
-            <Schedule />
-            <Specifications />
+            <ListAppointment />
         </div>
     );
 }

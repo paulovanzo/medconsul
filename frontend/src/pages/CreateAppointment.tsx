@@ -95,8 +95,8 @@ function CreateAppointment() {
             </Form>
           </div>
         </div>
-        <Schedule />
         <Specifications />
+        <Schedule />
       </div>
     </>
   );

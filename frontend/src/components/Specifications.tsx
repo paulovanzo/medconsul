@@ -39,10 +39,28 @@ function Specifications() {
     <div className="container-form">
         <div className='form-specifications'> 
             <Form className='form'>
+              <Form.Group className="mb-3">
+                    <Form.Label>Tipo de estabelecimento</Form.Label>
+                    <Form.Text>
+                      Qual é o tipo de estabelecimento que você procura?
+                    </Form.Text>
+                    <Form.Select aria-label="Insira aqui o tipo de estabelecimento">
+                        <option>Insira aqui o tipo de estabelecimento</option>
+                        <option>Estabelecimento</option>
+                        <option>Estabelecimento</option>
+                        <option>Estabelecimento</option>
+                        <option>Estabelecimento</option>
+                        <option>Estabelecimento</option>
+                        <option>Estabelecimento</option>
+                    </Form.Select>
+                </Form.Group>
                 <Form.Group className="mb-3">
-                    <Form.Label>Escolha uma especialidade:</Form.Label>
-                    <Form.Select>
-                        <option>Especialidade</option>
+                    <Form.Label>Especialidade</Form.Label>
+                    <Form.Text>
+                      Qual é a especialidade ou exame (procedimento) que você procura?
+                    </Form.Text>
+                    <Form.Select aria-label="Insira aqui a especialidade">
+                        <option>Insira aqui a especialidade</option>
                         <option>Especialidade</option>
                         <option>Especialidade</option>
                         <option>Especialidade</option>
@@ -52,9 +70,12 @@ function Specifications() {
                     </Form.Select>
                 </Form.Group>
                 <Form.Group className="mb-3">
-                    <Form.Label>Escolha uma unidade:</Form.Label>
-                    <Form.Select>
-                        <option>Unidade</option>
+                    <Form.Label>Unidade de atendimento</Form.Label>
+                    <Form.Text>
+                      Em qual unidade de atendimento deseja realizar a consulta?
+                    </Form.Text>
+                    <Form.Select aria-label="Insira aqui a unidade">
+                        <option>Insira aqui a unidade</option>
                         <option>Unidade</option>
                         <option>Unidade</option>
                         <option>Unidade</option>

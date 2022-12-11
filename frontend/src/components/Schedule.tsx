@@ -5,13 +5,13 @@ import { Link } from "react-router-dom";
 import api from "../utils/api";
 
 type TSchedule = {
-  schedule: string;
-  item1: string;
-  item2: string;
-  item3: string;
-  item4: string;
-  item5: string;
-  item6: string;
+  domingo: string;
+  segunda: string;
+  terca: string;
+  quarta: string;
+  quinta: string;
+  sexta: string;
+  sabado: string;
 };
 
 function Schedule() {
@@ -42,47 +42,30 @@ function Schedule() {
       </div>
       <div className="filter-create">
         <input type="text" id="search-schedule" placeholder="Campo de busca" />
-        <Link to="../appointment/createNewSchedule">
-          <button id="new-schedule">Cadastrar novo agendamento</button>
-        </Link>
       </div>
       <body className="body-menu">
         <div className="list">
           <table className="table_list">
             <tr>
-              <th>Horario</th>
-              <th>Item 1</th>
-              <th>Item 2</th>
-              <th>Item 3</th>
-              <th>Item 4</th>
-              <th>Item 5</th>
-              <th>Item 6</th>
+              <th>Domingo</th>
+              <th>Segunda</th>
+              <th>Terça</th>
+              <th>Quarta</th>
+              <th>Quinta</th>
+              <th>Sexta</th>
+              <th>Sabado</th>
             </tr>
             {schedule &&
               schedule.map((schedule: TSchedule) => {
                 return (
                   <tr>
-                    <td>{schedule.schedule}</td>
-                    <td>{schedule.item1}</td>
-                    <td>{schedule.item2}</td>
-                    <td>{schedule.item3}</td>
-                    <td>{schedule.item4}</td>
-                    <td>{schedule.item5}</td>
-                    <td>{schedule.item6}</td>
-                    <td>
-                      <div
-                        className="menu_tooltip"
-                        onClick={handleClick}
-                        style={{ display: isShown ? "block" : "none" }}
-                      >
-                        :
-                        <div className="menu_tooltip_options">
-                          <p>editar</p>
-                          <hr />
-                          <p>deletar</p>
-                        </div>
-                      </div>
-                    </td>
+                    <td>{schedule.domingo}</td>
+                    <td>{schedule.segunda}</td>
+                    <td>{schedule.terca}</td>
+                    <td>{schedule.quarta}</td>
+                    <td>{schedule.quinta}</td>
+                    <td>{schedule.sexta}</td>
+                    <td>{schedule.sabado}</td>
                   </tr>
                 );
               })}
