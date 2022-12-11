@@ -24,4 +24,8 @@ public class AppointmentService implements IAppointmentService {
         return appointmentRepository.save(appointment);
     }
 
+    @Override
+    public void delete(long id){
+        appointmentRepository.deleteById(id);
+    }
 }
