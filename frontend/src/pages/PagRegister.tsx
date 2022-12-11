@@ -35,6 +35,7 @@ function PagRegister() {
         localStorage.setItem("username", data.user.username);
 
         handleLogin(data);
+        window.history.pushState({},"","/")
       });
   }
 
@@ -49,7 +50,7 @@ function PagRegister() {
           <div className={styles.containerForm}>
             <div className={styles.form}>
               <Form onSubmit={(e) => handleSubmit(e)} className={styles.form}>
-                <Form.Group className="mb-3" controlId="formRegister">
+                <Form.Group className={styles.mb3} controlId="formRegister">
                   <Form.Label>Login: </Form.Label>
                   <Form.Control
                     onChange={(e) => {
@@ -57,49 +58,54 @@ function PagRegister() {
                     }}
                     type="text"
                     placeholder="Digite seu login"
+                    className={styles.formControl}
                   />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formSenha">
-                  <Form.Label>Senha: </Form.Label>
+                <Form.Group className={styles.mb3} controlId="formSenha">
+                  <Form.Label className={styles.formLabel}>Senha: </Form.Label>
                   <Form.Control
                     onChange={(e) => {
                       setPassword(e.target.value);
                     }}
                     type="password"
                     placeholder="Digite sua senha"
+                    className={styles.formControl}
                   />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formNome">
-                  <Form.Label>Nome: </Form.Label>
+                <Form.Group className={styles.mb3} controlId="formNome">
+                  <Form.Label className={styles.formLabel}>Nome: </Form.Label>
                   <Form.Control
                     onChange={(e) => {
                       setName(e.target.value);
                     }}
                     type="text"
                     placeholder="Digite seu nome"
+                    className={styles.formControl}
                   />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formEmail">
-                  <Form.Label>Email: </Form.Label>
+                <Form.Group className={styles.mb3} controlId="formEmail">
+                  <Form.Label className={styles.formLabel}>Email: </Form.Label>
                   <Form.Control
                     onChange={(e) => {
                       setEmail(e.target.value);
                     }}
                     type="email"
                     placeholder="Digite seu email"
+                    className={styles.formControl}
                   />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formTelefone">
-                  <Form.Label>Telefone: </Form.Label>
+                <Form.Group className={styles.mb3} controlId="formTelefone">
+                  <Form.Label className={styles.formLabel}>Telefone: </Form.Label>
                   <Form.Control
                     onChange={(e) => {
                       setPhone(e.target.value);
                     }}
                     type="number"
                     placeholder="Digite seu telefone"
+                    className={styles.formControl}
                   />
                 </Form.Group>
-                <Button type="submit">Cadastrar</Button>
+                <Button className={styles.btnPrimary} type="submit">Cadastrar</Button>
               </Form>
             </div>
           </div>

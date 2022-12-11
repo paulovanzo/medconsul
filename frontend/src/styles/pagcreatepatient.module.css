@@ -1,13 +1,9 @@
-:root {
-  background-color: #e1f2ef;
-}
-
-.container-new-patient {
+.container {
   width: 95%;
   margin: auto;
 }
 
-.form-create-patient {
+.form {
   background-color: #f9f9f9;
   width: 100%;
   height: 355px;
@@ -16,20 +12,7 @@
   justify-content: center;
 }
 
-.form-control {
-  background-color: #dde5e4;
-  border-radius: 10px;
-  height: 35px;
-  border: none;
-  width: 300px;
-}
-
-.form-label {
-  size: 20px;
-  margin: 15px;
-}
-
-button {
+.form button {
   background-color: #05595b;
   border: none;
   border-radius: 10px;
@@ -38,4 +21,22 @@ button {
   margin: 5px;
   width: 100px;
   cursor: pointer;
+}
+
+.formControl {
+  background-color: #dde5e4;
+  border-radius: 10px;
+  height: 35px;
+  border: none;
+  width: 300px;
+}
+
+.formLabel {
+  size: 20px;
+  margin: 15px;
+}
+
+.mb3 {
+  display: grid;
+  margin: 10px;
 }

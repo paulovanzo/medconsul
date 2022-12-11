@@ -41,28 +41,30 @@ function PagLogin() {
           </div>
           <div className={styles.containerForm}>
             <div className={styles.form}>
-              <Form onSubmit={(e) => handleSubmit(e)} className="form">
-                <Form.Group className="mb-3" controlId="formLogin">
-                  <Form.Label>Login: </Form.Label>
+              <Form onSubmit={(e) => handleSubmit(e)} className={styles.form}>
+                <Form.Group className={styles.mb3} controlId="formLogin">
+                  <Form.Label className={styles.formLabel}>Login: </Form.Label>
                   <Form.Control
                     onChange={(e) => {
                       setUsername(e.target.value);
                     }}
                     type="username"
                     placeholder="Digite seu login"
+                    className={styles.formControl}
                   />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formSenha">
-                  <Form.Label>Senha: </Form.Label>
+                <Form.Group className={styles.mb3} controlId="formSenha">
+                  <Form.Label className={styles.formLabel}>Senha: </Form.Label>
                   <Form.Control
                     onChange={(e) => {
                       setPassword(e.target.value);
                     }}
                     type="password"
                     placeholder="Digite sua senha"
+                    className={styles.formControl}
                   />
                 </Form.Group>
-                <Button type="submit">Entrar</Button>
+                <Button className={styles.btnPrimary} type="submit">Entrar</Button>
               </Form>
             </div>
           </div>

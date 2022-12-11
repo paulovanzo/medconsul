@@ -1,23 +1,18 @@
-import '../styles/mainpage.module.css'
-import '../styles/pagappointment.css'
-import Header from '../components/Header'
 import Form from "react-bootstrap/Form";
-import { AiFillHome } from "react-icons/ai";
-import { Link } from 'react-router-dom';
 
+import Header from '../components/Header'
+import { Crumb } from '../components/Crumb'
 import Schedule from "../components/Schedule";
 import Specifications from "../components/Specifications";
+import '../styles/mainpage.module.css'
+import '../styles/pagappointment.css'
 
 function PagAppointment() {
     return (
         <div>
             <Header />
             <div className='container-date'>
-                <div className='crumb'>
-                    <AiFillHome />
-                    <Link to="/"> Home {'>'} </Link>
-                    <label> Agenda </label>
-                </div>
+                <Crumb/>
                 <div className='container-form'>
                     <div className='form-profile'> 
                         <Form className='form'>

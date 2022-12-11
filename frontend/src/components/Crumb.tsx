@@ -1,13 +1,12 @@
 import React from "react";
 import { AiFillHome } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import "../styles/mainpage.css";
 import styles from "../styles/mainpage.module.css";
 
 export function Crumb(){
     const urls = window.location.pathname.split('/')
 
-    urls.shift
+    urls.shift()
 
     const urlText = Object.create({
         doctor: "Médico",
@@ -24,10 +23,7 @@ export function Crumb(){
                 </Link>
                 { urls.map((url, i) => {
                     return (
-                        <>
-                            <Link to={url}>{">"} </Link>
-                            <label>{urlText[url]}</label>
-                        </>
+                        <Link key={i} to={`/${urls.slice(0,i+1).join("/")}`}>{">"} <label>{urlText[url]}</label></Link>
                     )
                 })}
             </div>

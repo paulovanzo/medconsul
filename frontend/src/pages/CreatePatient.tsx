@@ -5,6 +5,7 @@ import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import { FormEvent, useState } from "react";
 
+import { Crumb } from "../components/Crumb";
 import Header from "../components/Header";
 import api from "../utils/api";
 import styles from "../styles/pagcreatepatient.module.css";
@@ -21,7 +22,7 @@ function CreatePatient() {
     await api.post("/api/v1/patient", {
       name: name,
       cpf: cpf,
-      phone: phone,
+      phoneNumber: phone,
       email: email,
     });
 
@@ -31,25 +32,20 @@ function CreatePatient() {
   return (
     <>
       <Header />
-      <div className="container-new-patient">
-        <div className="crumb">
-          <AiFillHome />
-          <label> Home {">"} </label>
-          <Link to="/patient">Paciente {">"}</Link>
-          <label> Criar novo Paciente</label>
-        </div>
-        <div className="container-form">
-          <div className="form-create-patient">
-            <Form onSubmit={(e) => handleSubmit(e)} className="form">
+      <div className={styles.container}>
+        <Crumb/>
+        <div className={styles.container}>
+          <div className={styles.form}>
+            <Form onSubmit={(e) => handleSubmit(e)} className={styles.form}>
               <Form.Group
                 onChange={(e: any) => {
                   setName(e.target.value);
                 }}
-                className="mb-3"
+                className={styles.mb3}
                 style={{ display: "flex" }}
                 controlId="formName"
               >
-                <Form.Label>Nome: </Form.Label>
+                <Form.Label className={styles.formLabel}>Nome: </Form.Label>
                 <Form.Control
                   type="text"
                   placeholder="Digite o nome do paciente"
@@ -60,7 +56,7 @@ function CreatePatient() {
                 onChange={(e: any) => {
                   setCpf(e.target.value);
                 }}
-                className="mb-3"
+                className={styles.mb3}
                 style={{ display: "flex" }}
                 controlId="formCPF"
               >
@@ -72,7 +68,7 @@ function CreatePatient() {
                 onChange={(e: any) => {
                   setPhone(e.target.value);
                 }}
-                className="mb-3"
+                className={styles.mb3}
                 style={{ display: "flex" }}
                 controlId="formTelefone"
               >
@@ -84,7 +80,7 @@ function CreatePatient() {
                 onChange={(e: any) => {
                   setEmail(e.target.value);
                 }}
-                className="mb-3"
+                className={styles.mb3}
                 style={{ display: "flex" }}
                 controlId="formemail"
               >
@@ -93,7 +89,7 @@ function CreatePatient() {
               </Form.Group>
 
               <Link to="/patient">
-                <Button>Cancelar</Button>
+                <Button className={styles.btnPrimary}>Cancelar</Button>
               </Link>
               <Button type="submit">Salvar</Button>
             </Form>
