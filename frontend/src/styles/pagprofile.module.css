@@ -1,13 +1,9 @@
-:root{
-    background-color: #E1F2EF;
-}
-
-.container-profile{
+.container {
     width: 95%;
-    margin: auto;
+    margin: 1rem;
 }
 
-.form-profile{
+.form {
     background-color: #F9F9F9;
     width: 100%;
     height: fit-content;
@@ -16,12 +12,13 @@
     justify-content: center;
     margin-bottom: 10px;
 }
-.mb-3{
+
+.mb3 {
     display: grid;
     margin: 10px;
 }
 
-.form-control{
+.formControl {
     background-color: #DDE5E4;
     border-radius: 10px;
     height: 35px;
@@ -29,13 +26,13 @@
     width: 300px;
 }
 
-.form-label{
+.formLabel {
     size: 20px;
     margin: 15px;
     color: #000000;
 }
 
-button{
+button {
     background-color: #05595B;
     border: none;
     border-radius: 10px;

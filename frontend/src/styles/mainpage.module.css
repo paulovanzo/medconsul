@@ -3,11 +3,7 @@
   padding: 0px;
 }
 
-:root {
-  background-color: #e1f2ef;
-}
-
-.head-main {
+.headMain {
   height: 90px;
   width: 100%;
   background-color: #05595b;
@@ -16,9 +12,9 @@
   align-items: center;
 }
 
-.header-functions {
+.headerFunctions {
   display: flex;
-  padding: 25px;
+  padding: 2rem;
 }
 
 .menu {
@@ -28,12 +24,12 @@
   border-radius: 10px;
   display: inline-flex;
   justify-content: center;
-  background-image: url("C:\Users\Giovanna\Documents\PDS\medconsul\frontend\src\icons\image 2.png");
+  background-image: url("src/icons/image 2.png");
   background-repeat: no-repeat;
   background-position: center;
 }
 
-.item-menu-patient {
+.itemMenuPatient {
   height: 182px;
   width: 159px;
   background-color: #ffffff;
@@ -41,7 +37,7 @@
   margin: 10px;
 }
 
-.item-menu-doctor {
+.itemMenuDoctor {
   height: 182px;
   width: 159px;
   background-color: #ffffff;
@@ -49,7 +45,7 @@
   margin: 10px;
 }
 
-.item-menu-appointment {
+.itemMenuAppointment {
   height: 182px;
   width: 159px;
   background-color: #ffffff;
@@ -64,7 +60,7 @@ a {
   text-decoration: none;
 }
 
-.icon-item-menu {
+.iconItemMenu {
   background-color: #d9d9d9;
   border-radius: 10px;
   width: 100px;
@@ -89,23 +85,23 @@ a {
   margin-right: 30px;
 }
 
-#name-user {
+.nameUser {
   margin-right: 10px;
   color: #ffffff;
 }
 
-.button-logout {
+.buttonLogout {
   display: flex;
   align-items: center;
 }
 
 .crumb {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   margin-left: 0px;
 }
 
-.container-menu {
+.containerMenu {
   width: 95%;
   margin: auto;
 }

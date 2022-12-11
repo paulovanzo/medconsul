@@ -1,6 +1,6 @@
-//import "../styles/pagcreateappointment.css";
 import { AiFillHome } from "react-icons/ai";
 import Header from "../components/Header";
+import { Crumb } from "../components/Crumb";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import api from "../utils/api";
@@ -34,12 +34,7 @@ function CreateAppointment() {
         <Header />
       </div>
       <div className="container-new-appointment">
-        <div className="crumb">
-          <AiFillHome />
-          <label> Home {">"} </label>
-          <Link to="/appointment"> Consulta {">"}</Link>
-          <label> Criar nova Consulta </label>
-        </div>
+        <Crumb/>
         <div className="container-form">
           <div className="form-create-appointment">
             <Form onSubmit={(e) => handleSubmit(e)} className="form">

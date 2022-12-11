@@ -1,10 +1,12 @@
-import "../styles/paglogin.css";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+
+import styles from  "../styles/paglogin.module.css";
 import api from "../utils/api";
 import imgLogin from "../icons/img-login.png";
 import { Context } from "../contexts/AuthContext";
 import { FormEvent, useContext, useState } from "react";
+import { Logo } from "../components/MainLogo";
 
 function PagLogin() {
   const { handleLogin } = useContext(Context);
@@ -30,40 +32,39 @@ function PagLogin() {
   }
 
   return (
-    <div className="body-login">
-      <div className="container-login">
-        <div className="header">
-          <label id="logo-first-name">Med</label>
-          <label id="logo-last-name">consul</label>
-        </div>
-        <div className="body">
-          <div className="image-login">
+    <div>
+      <div className={styles.container}>
+        <Logo/>
+        <div className={styles.body}>
+          <div className={styles.image}>
             <img src={imgLogin} />
           </div>
-          <div className="container-form-login">
-            <div className="form-login">
-              <Form onSubmit={(e) => handleSubmit(e)} className="form">
-                <Form.Group className="mb-3" controlId="formLogin">
-                  <Form.Label>Login: </Form.Label>
+          <div className={styles.containerForm}>
+            <div className={styles.form}>
+              <Form onSubmit={(e) => handleSubmit(e)} className={styles.form}>
+                <Form.Group className={styles.mb3} controlId="formLogin">
+                  <Form.Label className={styles.formLabel}>Login: </Form.Label>
                   <Form.Control
                     onChange={(e) => {
                       setUsername(e.target.value);
                     }}
                     type="username"
                     placeholder="Digite seu login"
+                    className={styles.formControl}
                   />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formSenha">
-                  <Form.Label>Senha: </Form.Label>
+                <Form.Group className={styles.mb3} controlId="formSenha">
+                  <Form.Label className={styles.formLabel}>Senha: </Form.Label>
                   <Form.Control
                     onChange={(e) => {
                       setPassword(e.target.value);
                     }}
                     type="password"
                     placeholder="Digite sua senha"
+                    className={styles.formControl}
                   />
                 </Form.Group>
-                <Button type="submit">Entrar</Button>
+                <Button className={styles.btnPrimary} type="submit">Entrar</Button>
               </Form>
             </div>
           </div>

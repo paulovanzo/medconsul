@@ -1,6 +1,8 @@
-import "../styles/pagregister.css"; // Criar estilo para Registro
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+
+import styles from "../styles/pagregister.module.css";
+import { Logo } from "../components/MainLogo" 
 import api from "../utils/api";
 import imgRegister from "../icons/img-register.png"
 import { Context } from "../contexts/AuthContext";
@@ -33,24 +35,22 @@ function PagRegister() {
         localStorage.setItem("username", data.user.username);
 
         handleLogin(data);
+        window.history.pushState({},"","/")
       });
   }
 
   return (
-    <div className="body-register">
-      <div className="container-register">
-        <div className="heade">
-          <label id="logo-frist-name">Med</label>
-          <label id="logo-lest-name">consul</label>
-        </div>
-        <div className="body">
-          <div className="image-register">
+    <div>
+      <div className={styles.container}>
+        <Logo/>
+        <div className={styles.body}>
+          <div className={styles.image}>
             <img src={imgRegister} />
           </div>
-          <div className="container-form-register">
-            <div className="form-register">
-              <Form onSubmit={(e) => handleSubmit(e)} className="form">
-                <Form.Group className="mb-3" controlId="formRegister">
+          <div className={styles.containerForm}>
+            <div className={styles.form}>
+              <Form onSubmit={(e) => handleSubmit(e)} className={styles.form}>
+                <Form.Group className={styles.mb3} controlId="formRegister">
                   <Form.Label>Login: </Form.Label>
                   <Form.Control
                     onChange={(e) => {
@@ -58,49 +58,54 @@ function PagRegister() {
                     }}
                     type="text"
                     placeholder="Digite seu login"
+                    className={styles.formControl}
                   />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formSenha">
-                  <Form.Label>Senha: </Form.Label>
+                <Form.Group className={styles.mb3} controlId="formSenha">
+                  <Form.Label className={styles.formLabel}>Senha: </Form.Label>
                   <Form.Control
                     onChange={(e) => {
                       setPassword(e.target.value);
                     }}
                     type="password"
                     placeholder="Digite sua senha"
+                    className={styles.formControl}
                   />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formNome">
-                  <Form.Label>Nome: </Form.Label>
+                <Form.Group className={styles.mb3} controlId="formNome">
+                  <Form.Label className={styles.formLabel}>Nome: </Form.Label>
                   <Form.Control
                     onChange={(e) => {
                       setName(e.target.value);
                     }}
                     type="text"
                     placeholder="Digite seu nome"
+                    className={styles.formControl}
                   />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formEmail">
-                  <Form.Label>Email: </Form.Label>
+                <Form.Group className={styles.mb3} controlId="formEmail">
+                  <Form.Label className={styles.formLabel}>Email: </Form.Label>
                   <Form.Control
                     onChange={(e) => {
                       setEmail(e.target.value);
                     }}
                     type="email"
                     placeholder="Digite seu email"
+                    className={styles.formControl}
                   />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formTelefone">
-                  <Form.Label>Telefone: </Form.Label>
+                <Form.Group className={styles.mb3} controlId="formTelefone">
+                  <Form.Label className={styles.formLabel}>Telefone: </Form.Label>
                   <Form.Control
                     onChange={(e) => {
                       setPhone(e.target.value);
                     }}
                     type="number"
                     placeholder="Digite seu telefone"
+                    className={styles.formControl}
                   />
                 </Form.Group>
-                <Button type="submit">Cadastrar</Button>
+                <Button className={styles.btnPrimary} type="submit">Cadastrar</Button>
               </Form>
             </div>
           </div>
