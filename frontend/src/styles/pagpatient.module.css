@@ -1,9 +1,9 @@
-.container-list {
+.container {
   width: 95%;
-  margin: auto;
+  margin: 1rem;
 }
 
-#search-patient {
+.search {
   border-radius: 10px;
   width: 290px;
   height: 30px;
@@ -18,14 +18,14 @@
   box-sizing: border-box;
 }
 
-.filter-create {
+.filterCreate {
   display: flex;
   width: 100%;
   justify-content: space-between;
   align-items: center;
 }
 
-#new-patient {
+.newPatient {
   height: 35px;
   width: 220px;
   background-color: #05595b;
@@ -38,10 +38,4 @@
 
 a {
   margin: 0px 5px 0px 5px;
-}
-
-.crumb {
-  display: inline-flex;
-  align-items: center;
-  margin-left: 0px;
 }

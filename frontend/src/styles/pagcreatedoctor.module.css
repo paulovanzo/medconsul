@@ -28,6 +28,10 @@
   align-items: flex-start;
 }
 
+.mb3 {
+  margin: 10px;
+}
+
 .formControl {
   background-color: #dde5e4;
   border-radius: 10px;
@@ -41,7 +45,7 @@
   margin: 15px;
 }
 
-button {
+.form button {
   background-color: #05595b;
   border: none;
   border-radius: 10px;

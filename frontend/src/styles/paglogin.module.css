@@ -63,17 +63,13 @@
     height: 0px;
   }
 
-  .form{
-    border-radius: 10px;
-  }
-
-  .container_form {
+  .containerForm {
     border-radius: 10px;
     
   }
 }
 
-.mb_3 {
+.mb3 {
   display: grid;
   justify-items: baseline;
 }
@@ -85,13 +81,13 @@
   flex-direction: column;
 }
 
-.form_label {
+.formLabel {
   font-family: "jost";
   color: #ffff;
   justify-content: flex-start;
 }
 
-.form_control {
+.formControl {
   background: #fefefe;
   border: 1px solid #2a464f;
   border-radius: 5px;
@@ -110,7 +106,7 @@ select:focus {
   outline: 0;
 }
 
-.btn_primary {
+.btnPrimary {
   margin: 15px;
   background: #2a464f;
   border-radius: 5px;

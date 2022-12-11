@@ -1,9 +1,8 @@
-import "../styles/listpatient.css";
 import { useState, useEffect } from "react";
-import "../styles/pagpatient.css";
-import { AiFillHome } from "react-icons/ai";
+import styles from "../styles/listpatient.module.css";
 import { Link } from "react-router-dom";
 import api from "../utils/api";
+import { Crumb } from "./Crumb";
 
 type Patient = {
   name: string;
@@ -32,19 +31,15 @@ export default function ListPatient() {
   };
 
   return (
-    <div className="container-list">
-      <div className="crumb">
-        <AiFillHome />
-        <Link to="/">Home {">"} </Link>
-        <label> Paciente</label>
-      </div>
-      <div className="filter-create">
-        <input type="text" id="search-patient" placeholder="Campo de busca" />
+    <div className={styles.container}>
+      <Crumb/>
+      <div className={styles.filterCreate}>
+        <input className={styles.search} type="text" id="search-patient" placeholder="Campo de busca" />
         <Link to="../patient/createNewPatient">
-          <button id="new-patient">Cadastrar novo paciente</button>
+          <button className={styles.btnNew} id="new-patient">Cadastrar novo paciente</button>
         </Link>
       </div>
-      <body className="body-menu">
+      <body className={styles.body}>
         <div className="list">
           <table className="table_list">
             <tr>
@@ -62,12 +57,12 @@ export default function ListPatient() {
                     <td>{patient.phoneNumber}</td>
                     <td>
                       <div
-                        className="menu_tooltip"
+                        className={styles.menu_tooltip}
                         onClick={handleClick}
                         style={{ display: isShown ? "block" : "none" }}
                       >
                         :
-                        <div className="menu_tooltip_options">
+                        <div className={styles.menu_tooltip_options}>
                           <p>editar</p>
                           <hr />
                           <p>deletar</p>
