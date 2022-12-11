@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import styles from "../styles/listpatient.module.css";
+import styles from "../styles/list.module.css";
 import { Link } from "react-router-dom";
 import api from "../utils/api";
 import { Crumb } from "./Crumb";

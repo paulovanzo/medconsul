@@ -1,6 +1,5 @@
-import "../styles/schedule.css";
+import styles from "../styles/list.module.css";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import api from "../utils/api";
 import { Crumb } from "./Crumb";
 
@@ -34,40 +33,43 @@ function Schedule() {
   };
 
   return (
-    <div className="container-list">
+    <div className={styles.container}>
       <Crumb />
-      <div className="filter-create">
-        <input type="text" id="search-schedule" placeholder="Campo de busca" />
+      <div className={styles.filterCreate}>
+        <input
+          className={styles.btnNew}
+          type="text"
+          id="search-schedule"
+          placeholder="Campo de busca"
+        />
       </div>
-      <body className="body-menu">
-        <div className="list">
-          <table className="table_list">
-            <tr>
-              <th>Domingo</th>
-              <th>Segunda</th>
-              <th>Terça</th>
-              <th>Quarta</th>
-              <th>Quinta</th>
-              <th>Sexta</th>
-              <th>Sabado</th>
-            </tr>
-            {schedule &&
-              schedule.map((schedule: TSchedule) => {
-                return (
-                  <tr>
-                    <td>{schedule.domingo}</td>
-                    <td>{schedule.segunda}</td>
-                    <td>{schedule.terca}</td>
-                    <td>{schedule.quarta}</td>
-                    <td>{schedule.quinta}</td>
-                    <td>{schedule.sexta}</td>
-                    <td>{schedule.sabado}</td>
-                  </tr>
-                );
-              })}
-          </table>
-        </div>
-      </body>
+      <div className="list">
+        <table className={styles.table_list}>
+          <tr>
+            <th>Domingo</th>
+            <th>Segunda</th>
+            <th>Terça</th>
+            <th>Quarta</th>
+            <th>Quinta</th>
+            <th>Sexta</th>
+            <th>Sabado</th>
+          </tr>
+          {schedule &&
+            schedule.map((schedule: TSchedule) => {
+              return (
+                <tr>
+                  <td>{schedule.domingo}</td>
+                  <td>{schedule.segunda}</td>
+                  <td>{schedule.terca}</td>
+                  <td>{schedule.quarta}</td>
+                  <td>{schedule.quinta}</td>
+                  <td>{schedule.sexta}</td>
+                  <td>{schedule.sabado}</td>
+                </tr>
+              );
+            })}
+        </table>
+      </div>
     </div>
   );
 }

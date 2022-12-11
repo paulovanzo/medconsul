@@ -3,7 +3,7 @@ import { Crumb } from "./Crumb";
 import { Link } from "react-router-dom";
 import api from "../utils/api";
 
-import styles from "../styles/listpatient.module.css";
+import styles from "../styles/list.module.css";
 
 type TListAppointment = {
   data: string;

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import styles from "../styles/listpatient.module.css";
+import styles from "../styles/list.module.css";
 import api from "../utils/api";
 import { BsFillPencilFill } from "react-icons/bs";
 import { FaTrash } from "react-icons/fa";
