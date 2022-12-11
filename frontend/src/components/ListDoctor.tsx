@@ -36,7 +36,7 @@ function ListDoctor() {
       <div className="crumb">
         <AiFillHome />
         <Link to="/">Home {">"} </Link>
-        <label>Doctor</label>
+        <label>Médico</label>
       </div>
       <div className="filter-create">
         <input type="text" id="search-doctor" placeholder="Campo de busca" />

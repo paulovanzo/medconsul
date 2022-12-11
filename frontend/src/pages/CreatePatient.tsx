@@ -1,11 +1,13 @@
-import "../styles/pagcreatepatient.css";
 import { AiFillHome } from "react-icons/ai";
-import Header from "../components/Header";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import api from "../utils/api";
+
 import { Link } from "react-router-dom";
 import { FormEvent, useState } from "react";
+
+import Header from "../components/Header";
+import api from "../utils/api";
+import styles from "../styles/pagcreatepatient.module.css";
 
 function CreatePatient() {
   const [name, setName] = useState("");
@@ -28,9 +30,7 @@ function CreatePatient() {
 
   return (
     <>
-      <div className="head-main">
-        <Header />
-      </div>
+      <Header />
       <div className="container-new-patient">
         <div className="crumb">
           <AiFillHome />
@@ -46,6 +46,7 @@ function CreatePatient() {
                   setName(e.target.value);
                 }}
                 className="mb-3"
+                style={{ display: "flex" }}
                 controlId="formName"
               >
                 <Form.Label>Nome: </Form.Label>
@@ -60,6 +61,7 @@ function CreatePatient() {
                   setCpf(e.target.value);
                 }}
                 className="mb-3"
+                style={{ display: "flex" }}
                 controlId="formCPF"
               >
                 <Form.Label>CPF: </Form.Label>
@@ -71,6 +73,7 @@ function CreatePatient() {
                   setPhone(e.target.value);
                 }}
                 className="mb-3"
+                style={{ display: "flex" }}
                 controlId="formTelefone"
               >
                 <Form.Label>Telefone: </Form.Label>
@@ -82,6 +85,7 @@ function CreatePatient() {
                   setEmail(e.target.value);
                 }}
                 className="mb-3"
+                style={{ display: "flex" }}
                 controlId="formemail"
               >
                 <Form.Label>E-mail: </Form.Label>

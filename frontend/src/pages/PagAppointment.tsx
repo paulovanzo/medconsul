@@ -1,4 +1,4 @@
-import '../styles/mainpage.css'
+import '../styles/mainpage.module.css'
 import '../styles/pagappointment.css'
 import Header from '../components/Header'
 import Form from "react-bootstrap/Form";
@@ -11,9 +11,7 @@ import Specifications from "../components/Specifications";
 function PagAppointment() {
     return (
         <div>
-            <div className="head-main">
-                <Header />
-            </div>
+            <Header />
             <div className='container-date'>
                 <div className='crumb'>
                     <AiFillHome />

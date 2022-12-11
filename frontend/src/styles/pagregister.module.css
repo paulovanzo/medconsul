@@ -1,63 +1,56 @@
-@import "@fontsource/kodchasan";
-@import "@fontsource/jost";
-
-* {
-  margin: 0px;
-  padding: 0px;
+.body {
+  max-width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
 }
 
-:root {
-  background-color: #f6f6f6;
-}
-
-.container-register {
+.container {
   display: block;
   text-align: center;
   margin: 10%;
 }
 
-#logo-frist-name {
-  color: #028f7b;
-  font-family: "Kodchasan";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 60px;
-}
-
-#logo-lest-name {
-  color: #2a464f;
-  font-family: "Kodchasan";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 60px;
-}
-
-.body {
-  display: inline-flex;
-}
-
-.image-register {
-  width: 350px;
-  height: 400px;
+.image {
+  height: 600px;
   background-color: #ffffff;
   border-radius: 10px 0px 0px 10px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.image-register img {
-  width: 300px;
-  height: 200px;
+.image img {
+  border-radius: 10px 0px 0px 10px;
+  max-width: 100%;
+  height: 100%;
 }
 
-.container-form-register {
+.containerForm {
+  max-width: 90%;
   width: 350px;
-  height: 400px;
+  height: 600px;
   background-color: #02b39a;
   border-radius: 0px 10px 10px 0px;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+@media only screen and (max-width: 425) {
+  .image {
+    width: 0px;
+    height: 0px;
+  }
+
+  .image img {
+    width: 0px;
+    height: 0px;
+  }
+
+  .containerForm {
+    border-radius: 10px;
+  }
 }
 
 .mb-3 {

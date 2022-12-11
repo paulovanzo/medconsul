@@ -1,6 +1,8 @@
-import "../styles/pagregister.css"; // Criar estilo para Registro
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+
+import styles from "../styles/pagregister.module.css";
+import { Logo } from "../components/MainLogo" 
 import api from "../utils/api";
 import imgRegister from "../icons/img-register.png"
 import { Context } from "../contexts/AuthContext";
@@ -37,19 +39,16 @@ function PagRegister() {
   }
 
   return (
-    <div className="body-register">
-      <div className="container-register">
-        <div className="heade">
-          <label id="logo-frist-name">Med</label>
-          <label id="logo-lest-name">consul</label>
-        </div>
-        <div className="body">
-          <div className="image-register">
+    <div>
+      <div className={styles.container}>
+        <Logo/>
+        <div className={styles.body}>
+          <div className={styles.image}>
             <img src={imgRegister} />
           </div>
-          <div className="container-form-register">
-            <div className="form-register">
-              <Form onSubmit={(e) => handleSubmit(e)} className="form">
+          <div className={styles.containerForm}>
+            <div className={styles.form}>
+              <Form onSubmit={(e) => handleSubmit(e)} className={styles.form}>
                 <Form.Group className="mb-3" controlId="formRegister">
                   <Form.Label>Login: </Form.Label>
                   <Form.Control

@@ -15,10 +15,6 @@
   display: inline-flex;
   justify-content: center;
 }
-.mb-3 {
-  display: flex;
-  margin: 10px;
-}
 
 .form-control {
   background-color: #dde5e4;
