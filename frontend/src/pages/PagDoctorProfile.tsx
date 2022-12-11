@@ -1,4 +1,3 @@
-import { AiFillHome } from 'react-icons/ai';
 import Header from '../components/Header';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -13,21 +12,21 @@ function PagDoctorProfile() {
     return (
         <>
             <Header />
-            <div className='container-profile'>
+            <div className={styles.container}>
                 <Crumb/>
-                <div className='container-form'>
-                    <div className='form-profile'> 
-                        <Form className='form'>
+                <div className={styles.container}>
+                    <div className={styles.form}> 
+                        <Form className={styles.form}>
                             <Row>
                                 <Col>
-                                <Form.Group className="mb-3" controlId="formName">
-                                    <Form.Label>Nome: </Form.Label>
-                                    <Form.Control type="text" placeholder="Fernando Borges" />
+                                <Form.Group className={styles.mb3} controlId="formName">
+                                    <Form.Label className={styles.formLabel}>Nome: </Form.Label>
+                                    <Form.Control className={styles.formControl} type="text" placeholder="Fernando Borges" />
                                 </Form.Group>
                                 </Col>
                                 <Col>
-                                    <Form.Group className="mb-3" controlId="formEvaluation">
-                                        <Form.Label>Avaliação: </Form.Label>
+                                    <Form.Group className={styles.mb3} controlId="formEvaluation">
+                                        <Form.Label className={styles.formLabel}>Avaliação: </Form.Label>
                                         <Form.Check type="radio" label="Muito ruim" id="formEvaluationRadios"/>
                                         <Form.Check type="radio" label="Ruim" id="formEvaluationRadios"/>
                                         <Form.Check type="radio" label="Normal" id="formEvaluationRadios"/>
@@ -38,23 +37,23 @@ function PagDoctorProfile() {
                             </Row>
                             <Row>
                                 <Col>
-                                    <Form.Group className="mb-3" controlId="formFormation">
-                                        <Form.Label>Formação: </Form.Label>
-                                        <Form.Control type="text" placeholder="Clinico Geral"/>
+                                    <Form.Group className={styles.mb3} controlId="formFormation">
+                                        <Form.Label className={styles.formLabel}>Formação: </Form.Label>
+                                        <Form.Control className={styles.formControl} type="text" placeholder="Clinico Geral"/>
                                     </Form.Group>
                                 </Col>
                                 <Col>
-                                    <Form.Group className="mb-3" controlId="formPhone">
-                                        <Form.Label>Telefone: </Form.Label>
-                                        <Form.Control type="text" placeholder="(84) 9 9282-4567"/>
+                                    <Form.Group className={styles.mb3} controlId="formPhone">
+                                        <Form.Label className={styles.formLabel}>Telefone: </Form.Label>
+                                        <Form.Control className={styles.formControl} type="text" placeholder="(84) 9 9282-4567"/>
                                     </Form.Group>
                                 </Col>
                             </Row>
                             <Row>
                                 <Col>
-                                    <Form.Group className="mb-3" controlId="formDesc">
-                                        <Form.Label>Descrição geral: </Form.Label>
-                                        <Form.Control type="textarea" placeholder="Lorem Ipsun"/>
+                                    <Form.Group className={styles.mb3} controlId="formDesc">
+                                        <Form.Label className={styles.formLabel}>Descrição geral: </Form.Label>
+                                        <Form.Control className={styles.formControl} type="textarea" placeholder="Lorem Ipsun"/>
                                     </Form.Group>
                                 </Col>
                             </Row>

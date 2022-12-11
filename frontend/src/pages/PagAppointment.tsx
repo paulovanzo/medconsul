@@ -30,7 +30,7 @@ function PagAppointment() {
                             </Form.Group>
                         </Form>
                     </div>
-                </div>    
+                </div>
             </div>
             <Schedule />
             <Specifications />
