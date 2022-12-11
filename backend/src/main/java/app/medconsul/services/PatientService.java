@@ -1,6 +1,7 @@
 package app.medconsul.services;
 
 import java.util.List;
+import java.util.Iterator;  
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -39,6 +40,9 @@ public class PatientService implements IPatientService {
 
     public Patient findById(Long id){
         return patientRepository.findById(id).orElseThrow(IllegalArgumentException::new);
-    }
+    } 
 
+    public void delete(long id){
+        patientRepository.deleteById(id);
+    }
 }

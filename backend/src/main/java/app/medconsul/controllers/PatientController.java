@@ -3,8 +3,10 @@ package app.medconsul.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import app.medconsul.entities.Patient;
 import app.medconsul.entities.DTO.PatientDTO;
@@ -37,5 +39,11 @@ public class PatientController {
     @GetMapping(value = "/patient/{id}", produces = "application/json")
     public ResponseEntity<Patient> getPatient(@PathVariable long id){
         return ResponseEntity.ok(patientService.findById(id));
+    }
+
+    @DeleteMapping(value = "/patient/{id}")
+    public ResponseEntity<Void> delete(@PathVariable long id){
+        patientService.delete(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 }
