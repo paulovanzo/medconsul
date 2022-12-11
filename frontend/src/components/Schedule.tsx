@@ -1,8 +1,8 @@
 import "../styles/schedule.css";
 import { useState, useEffect } from "react";
-import { AiFillHome } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import api from "../utils/api";
+import { Crumb } from "./Crumb";
 
 type TSchedule = {
   domingo: string;
@@ -35,11 +35,7 @@ function Schedule() {
 
   return (
     <div className="container-list">
-      <div className="crumb">
-        <AiFillHome />
-        <Link to="/"> Home {">"} </Link>
-        <label> Horario </label>
-      </div>
+      <Crumb />
       <div className="filter-create">
         <input type="text" id="search-schedule" placeholder="Campo de busca" />
       </div>

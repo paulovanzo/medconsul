@@ -2,9 +2,9 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
 import styles from "../styles/pagregister.module.css";
-import { Logo } from "../components/MainLogo" 
+import { Logo } from "../components/MainLogo";
 import api from "../utils/api";
-import imgRegister from "../icons/img-register.png"
+import imgRegister from "../icons/img-register.png";
 import { Context } from "../contexts/AuthContext";
 import { FormEvent, useContext, useState } from "react";
 
@@ -35,14 +35,14 @@ function PagRegister() {
         localStorage.setItem("username", data.user.username);
 
         handleLogin(data);
-        window.history.pushState({},"","/")
+        window.history.pushState({}, "", "/");
       });
   }
 
   return (
     <div>
       <div className={styles.container}>
-        <Logo/>
+        <Logo />
         <div className={styles.body}>
           <div className={styles.image}>
             <img src={imgRegister} />
@@ -95,7 +95,9 @@ function PagRegister() {
                   />
                 </Form.Group>
                 <Form.Group className={styles.mb3} controlId="formTelefone">
-                  <Form.Label className={styles.formLabel}>Telefone: </Form.Label>
+                  <Form.Label className={styles.formLabel}>
+                    Telefone:{" "}
+                  </Form.Label>
                   <Form.Control
                     onChange={(e) => {
                       setPhone(e.target.value);
@@ -105,7 +107,9 @@ function PagRegister() {
                     className={styles.formControl}
                   />
                 </Form.Group>
-                <Button className={styles.btnPrimary} type="submit">Cadastrar</Button>
+                <Button className={styles.btnPrimary} type="submit">
+                  Cadastrar
+                </Button>
               </Form>
             </div>
           </div>

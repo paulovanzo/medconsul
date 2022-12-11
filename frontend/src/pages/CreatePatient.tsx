@@ -26,14 +26,14 @@ function CreatePatient() {
       email: email,
     });
 
-    window.history.pushState({},"","/patient")
+    window.history.pushState({}, "", "/patient");
   }
 
   return (
     <>
       <Header />
       <div className={styles.container}>
-        <Crumb/>
+        <Crumb />
         <div className={styles.container}>
           <div className={styles.form}>
             <Form onSubmit={(e) => handleSubmit(e)} className={styles.form}>

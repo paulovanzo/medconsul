@@ -24,7 +24,7 @@ function CreateDoctor() {
       speciality: speciality,
     });
 
-    window.history.pushState({},"","/doctor")
+    window.history.pushState({}, "", "/doctor");
   }
 
   return (
@@ -33,7 +33,7 @@ function CreateDoctor() {
         <Header />
       </div>
       <div className={styles.container}>
-        <Crumb/>
+        <Crumb />
         <div className={styles.container}>
           <div className={styles.form}>
             <Form onSubmit={(e) => handleSubmit(e)}>
@@ -46,7 +46,8 @@ function CreateDoctor() {
                 controlId="formName"
               >
                 <Form.Label className={styles.formLabel}>Nome: </Form.Label>
-                <Form.Control className={styles.formControl}
+                <Form.Control
+                  className={styles.formControl}
                   type="text"
                   placeholder="Digite o nome do paciente"
                 />
@@ -61,7 +62,11 @@ function CreateDoctor() {
                 controlId="formCRM"
               >
                 <Form.Label className={styles.formLabel}>CRM: </Form.Label>
-                <Form.Control className={styles.formControl} type="text" placeholder="Digite o CRM" />
+                <Form.Control
+                  className={styles.formControl}
+                  type="text"
+                  placeholder="Digite o CRM"
+                />
               </Form.Group>
 
               <Form.Group
@@ -72,7 +77,11 @@ function CreateDoctor() {
                 controlId="formTelefone"
               >
                 <Form.Label className={styles.formLabel}>Telefone: </Form.Label>
-                <Form.Control className={styles.formControl} type="telefone" placeholder="Digite o Telefone" />
+                <Form.Control
+                  className={styles.formControl}
+                  type="telefone"
+                  placeholder="Digite o Telefone"
+                />
               </Form.Group>
 
               <Form.Group
@@ -83,7 +92,9 @@ function CreateDoctor() {
                 style={{ display: "flex", maxWidth: "90%" }}
                 controlId="formemail"
               >
-                <Form.Label className={styles.formLabel}>Especialidade: </Form.Label>
+                <Form.Label className={styles.formLabel}>
+                  Especialidade:{" "}
+                </Form.Label>
                 <Form.Control
                   className={styles.formControl}
                   type="especialidade"

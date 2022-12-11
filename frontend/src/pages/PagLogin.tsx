@@ -1,7 +1,7 @@
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
-import styles from  "../styles/paglogin.module.css";
+import styles from "../styles/paglogin.module.css";
 import api from "../utils/api";
 import imgLogin from "../icons/img-login.png";
 import { Context } from "../contexts/AuthContext";
@@ -34,7 +34,7 @@ function PagLogin() {
   return (
     <div>
       <div className={styles.container}>
-        <Logo/>
+        <Logo />
         <div className={styles.body}>
           <div className={styles.image}>
             <img src={imgLogin} />
@@ -64,7 +64,9 @@ function PagLogin() {
                     className={styles.formControl}
                   />
                 </Form.Group>
-                <Button className={styles.btnPrimary} type="submit">Entrar</Button>
+                <Button className={styles.btnPrimary} type="submit">
+                  Entrar
+                </Button>
               </Form>
             </div>
           </div>

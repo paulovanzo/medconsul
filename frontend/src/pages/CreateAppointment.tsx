@@ -25,7 +25,7 @@ function CreateAppointment() {
       schedule: schedule,
     });
 
-    window.history.pushState({},"","/appointment")
+    window.history.pushState({}, "", "/appointment");
   }
 
   return (
@@ -34,7 +34,7 @@ function CreateAppointment() {
         <Header />
       </div>
       <div className="container-new-appointment">
-        <Crumb/>
+        <Crumb />
         <div className="container-form">
           <div className="form-create-appointment">
             <Form onSubmit={(e) => handleSubmit(e)} className="form">
@@ -46,10 +46,7 @@ function CreateAppointment() {
                 controlId="formPaciente"
               >
                 <Form.Label>Paciente: </Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="Informe o paciente"
-                />
+                <Form.Control type="text" placeholder="Informe o paciente" />
               </Form.Group>
 
               <Form.Group
@@ -60,10 +57,7 @@ function CreateAppointment() {
                 controlId="formMedico"
               >
                 <Form.Label>Medico: </Form.Label>
-                <Form.Control 
-                  type="text" 
-                  placeholder="Informe o medico" 
-                />
+                <Form.Control type="text" placeholder="Informe o medico" />
               </Form.Group>
 
               <Form.Group

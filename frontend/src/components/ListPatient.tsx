@@ -32,49 +32,54 @@ export default function ListPatient() {
 
   return (
     <div className={styles.container}>
-      <Crumb/>
+      <Crumb />
       <div className={styles.filterCreate}>
-        <input className={styles.search} type="text" id="search-patient" placeholder="Campo de busca" />
+        <input
+          className={styles.search}
+          type="text"
+          id="search-patient"
+          placeholder="Campo de busca"
+        />
         <Link to="../patient/createNewPatient">
-          <button className={styles.btnNew} id="new-patient">Cadastrar novo paciente</button>
+          <button className={styles.btnNew} id="new-patient">
+            Cadastrar novo paciente
+          </button>
         </Link>
       </div>
-      <body className={styles.body}>
-        <div className="list">
-          <table className="table_list">
-            <tr>
-              <th>Nome</th>
-              <th>CPF</th>
-              <th>Telefone</th>
-              <th>Genero</th>
-            </tr>
-            {listPatient &&
-              listPatient.map((patient: Patient) => {
-                return (
-                  <tr>
-                    <td>{patient.name}</td>
-                    <td>{patient.cpf}</td>
-                    <td>{patient.phoneNumber}</td>
-                    <td>
-                      <div
-                        className={styles.menu_tooltip}
-                        onClick={handleClick}
-                        style={{ display: isShown ? "block" : "none" }}
-                      >
-                        :
-                        <div className={styles.menu_tooltip_options}>
-                          <p>editar</p>
-                          <hr />
-                          <p>deletar</p>
-                        </div>
+      <div className={styles.body}>
+        <table className="table_list">
+          <tr>
+            <th>Nome</th>
+            <th>CPF</th>
+            <th>Telefone</th>
+            <th>Genero</th>
+          </tr>
+          {listPatient &&
+            listPatient.map((patient: Patient) => {
+              return (
+                <tr>
+                  <td>{patient.name}</td>
+                  <td>{patient.cpf}</td>
+                  <td>{patient.phoneNumber}</td>
+                  <td>
+                    <div
+                      className={styles.menu_tooltip}
+                      onClick={handleClick}
+                      style={{ display: isShown ? "block" : "none" }}
+                    >
+                      :
+                      <div className={styles.menu_tooltip_options}>
+                        <p>editar</p>
+                        <hr />
+                        <p>deletar</p>
                       </div>
-                    </td>
-                  </tr>
-                );
-              })}
-          </table>
-        </div>
-      </body>
+                    </div>
+                  </td>
+                </tr>
+              );
+            })}
+        </table>
+      </div>
     </div>
   );
 }

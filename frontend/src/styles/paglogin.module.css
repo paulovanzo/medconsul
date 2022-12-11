@@ -1,8 +1,8 @@
 @import "@fontsource/kodchasan";
 @import "@fontsource/jost";
 
-:root{
-  background-color: #F6F6F6;
+:root {
+  background-color: #f6f6f6;
 }
 
 .container {
@@ -14,8 +14,10 @@
   max-width: 90%;
   margin: 1rem;
   position: absolute;
-  top: 0; bottom: 0;
-  left: 0; right: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   margin: auto;
 }
 
@@ -65,7 +67,6 @@
 
   .containerForm {
     border-radius: 10px;
-    
   }
 }
 
@@ -92,7 +93,7 @@
   border: 1px solid #2a464f;
   border-radius: 5px;
   box-sizing: border-box;
-  font-family: 'Jost';
+  font-family: "Jost";
   width: 260px;
   height: 32px;
   padding: 10px;

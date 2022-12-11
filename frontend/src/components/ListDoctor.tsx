@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 
 import styles from "../styles/listpatient.module.css";
 import api from "../utils/api";
+import { BsFillPencilFill } from "react-icons/bs";
+import { FaTrash } from "react-icons/fa";
 import { Crumb } from "./Crumb";
 
 type Doctor = {
@@ -33,50 +35,63 @@ function ListDoctor() {
 
   return (
     <div className={styles.container}>
-      <Crumb/>
+      <Crumb />
       <div className={styles.filterCreate}>
-        <input className={styles.search} type="text" id="search-doctor" placeholder="Campo de busca" />
+        <input
+          className={styles.search}
+          type="text"
+          id="search-doctor"
+          placeholder="Campo de busca"
+        />
         <Link to="/doctor/createNewDoctor">
-          <button className={styles.btnNew} id="new-doctor">Cadastrar novo médico</button>
+          <button className={styles.btnNew} id="new-doctor">
+            Cadastrar novo médico
+          </button>
         </Link>
       </div>
-      <body className={styles.bodyMenu}>
-        <div className="list">
-          <table className="table_list">
-            <tr>
-              <th>Nome</th>
-              <th>CRM</th>
-              <th>Telefone</th>
-              <th>Especialidade</th>
-            </tr>
-            {listDoctor &&
-              listDoctor.map((doctor: Doctor) => {
-                return (
-                  <tr>
-                    <td>{doctor.name}</td>
-                    <td>{doctor.crm}</td>
-                    <td>{doctor.phoneNumber}</td>
-                    <td>
-                      {doctor.speciality}
-                      <div
-                        className={styles.menu_tooltip}
-                        onClick={handleClick}
-                        style={{ display: isShown ? "block" : "none" }}
-                      >
-                        :
-                        <div className={styles.menu_tooltip_options}>
-                          <p>editar</p>
-                          <hr />
-                          <p>deletar</p>
-                        </div>
+      <div className={styles.bodyMenu}>
+        <table className={styles.table_list}>
+          <tr>
+            <th>Nome</th>
+            <th>CRM</th>
+            <th>Telefone</th>
+            <th>Especialidade</th>
+          </tr>
+          {listDoctor &&
+            listDoctor.map((doctor: Doctor) => {
+              return (
+                <tr>
+                  <td>{doctor.name}</td>
+                  <td>{doctor.crm}</td>
+                  <td>{doctor.phoneNumber}</td>
+                  <td>
+                    {doctor.speciality}
+                    <div
+                      className={styles.menu_tooltip}
+                      onClick={handleClick}
+                      style={{ display: isShown ? "block" : "none" }}
+                    >
+                      :
+                      <div className={styles.menu_tooltip_options}>
+                        <Link to="/doctor/createNewDoctor">
+                          <button className={styles.btnNew} id="edit-doctor">
+                            <BsFillPencilFill />
+                          </button>
+                        </Link>
+                        <hr />
+                        <Link to="/doctor/deleteDoc">
+                          <button className={styles.btnNew} id="delete-doctor">
+                            <FaTrash />
+                          </button>
+                        </Link>
                       </div>
-                    </td>
-                  </tr>
-                );
-              })}
-          </table>
-        </div>
-      </body>
+                    </div>
+                  </td>
+                </tr>
+              );
+            })}
+        </table>
+      </div>
     </div>
   );
 }
