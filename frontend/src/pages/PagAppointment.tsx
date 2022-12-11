@@ -5,8 +5,7 @@ import Form from "react-bootstrap/Form";
 import { AiFillHome } from "react-icons/ai";
 import { Link } from 'react-router-dom';
 
-import Schedule from "../components/Schedule";
-import Specifications from "../components/Specifications";
+import ListAppointment from '../components/ListAppointment';
 
 function PagAppointment() {
     return (
@@ -39,8 +38,7 @@ function PagAppointment() {
                     </div>
                 </div>    
             </div>
-            <Schedule />
-            <Specifications />
+            <ListAppointment />
         </div>
     );
 }
