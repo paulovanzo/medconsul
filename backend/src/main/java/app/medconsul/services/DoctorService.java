@@ -41,4 +41,7 @@ public class DoctorService implements IDoctorService {
         return doctorRepository.findById(id).orElseThrow(IllegalArgumentException::new);
     }
 
+    public void delete(long id){
+        doctorRepository.deleteById(id);
+    }
 }
