@@ -1,17 +1,13 @@
-import '../styles/mainpage.css'
-import Header from '../components/Header'
-import Schedule from '../components/Schedule';
-
+import Header from "../components/Header";
+import ListAppointment from "../components/ListAppointment";
 
 function PagAppointment() {
-
   return (
-    <><div className="head-main">
+    <div>
       <Header />
+      <ListAppointment />
     </div>
-    <Schedule/>
-    </>
-  )
+  );
 }
 
-export default PagAppointment
+export default PagAppointment;

@@ -1,0 +1,123 @@
+@import "@fontsource/kodchasan";
+@import "@fontsource/jost";
+
+:root {
+  background-color: #f6f6f6;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  max-width: 90%;
+  margin: 1rem;
+  position: absolute;
+  margin: 4rem;
+}
+
+.body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image {
+  max-width: 90%;
+  width: 600px;
+  height: 400px;
+  background-color: #ffffff;
+  border-radius: 10px 0px 0px 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.image img {
+  max-width: 90%;
+  width: 420px;
+  height: 420px;
+  justify-content: center;
+}
+
+.containerForm {
+  width: 600px;
+  height: 400px;
+  background-color: #02b39a;
+  border-radius: 0px 10px 10px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+@media only screen and (max-width: 600px) {
+  .image {
+    width: 0px;
+    height: 0px;
+  }
+
+  .image img {
+    width: 0px;
+    height: 0px;
+  }
+
+  .containerForm {
+    border-radius: 10px;
+  }
+}
+
+.mb3 {
+  display: grid;
+  justify-items: baseline;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.formLabel {
+  font-family: "jost";
+  color: #ffff;
+  justify-content: flex-start;
+}
+
+.formControl {
+  background: #fefefe;
+  border: 1px solid #2a464f;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-family: "Jost";
+  width: 260px;
+  height: 32px;
+  padding: 10px;
+}
+
+textarea:focus,
+input:focus,
+select:focus {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border: 0 none;
+  outline: 0;
+}
+
+.btnPrimary {
+  margin: 15px;
+  background: #2a464f;
+  border-radius: 5px;
+  color: white;
+  width: 110px;
+  border: none;
+  height: 35px;
+  cursor: pointer;
+}
+
+.btnRegister {
+  margin: 1rem;
+  color: white;
+  border: none;
+  height: 35px;
+  cursor: pointer;
+}

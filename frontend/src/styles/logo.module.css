@@ -1,0 +1,27 @@
+.firstName {
+  color: #028f7b;
+  font-family: "Kodchasan";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 4rem;
+}
+
+.lastName {
+  color: #2a464f;
+  font-family: "Kodchasan";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 4rem;
+}
+
+.containerLogo {
+  max-width: 90%;
+}
+
+.main {
+  max-width: 90%;
+  height: 90px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}

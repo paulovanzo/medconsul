@@ -1,9 +1,11 @@
-import "../styles/listpatient.css";
 import { useEffect, useState } from "react";
-import "../styles/pagpatient.css";
-import { AiFillHome } from "react-icons/ai";
 import { Link } from "react-router-dom";
+
+import styles from "../styles/list.module.css";
 import api from "../utils/api";
+import { BsFillPencilFill } from "react-icons/bs";
+import { FaTrash } from "react-icons/fa";
+import { Crumb } from "./Crumb";
 
 type Doctor = {
   name: string;
@@ -13,7 +15,6 @@ type Doctor = {
 };
 
 function ListDoctor() {
-  const [isShown, setIsShown] = useState(true);
   const [listDoctor, setListDoctor] = useState<Array<Doctor>>([]);
 
   async function fetchData() {
@@ -27,60 +28,58 @@ function ListDoctor() {
     fetchData();
   }, []);
 
-  const handleClick = () => {
-    setIsShown(!isShown);
-  };
-
   return (
-    <div className="container-list">
-      <div className="crumb">
-        <AiFillHome />
-        <Link to="/">Home {">"} </Link>
-        <label>Doctor</label>
-      </div>
-      <div className="filter-create">
-        <input type="text" id="search-doctor" placeholder="Campo de busca" />
+    <div className={styles.container}>
+      <Crumb />
+      <div className={styles.filterCreate}>
+        <input
+          className={styles.search}
+          type="text"
+          id="search-doctor"
+          placeholder="Campo de busca"
+        />
         <Link to="/doctor/createNewDoctor">
-          <button id="new-doctor">Cadastrar novo médico</button>
+          <button className={styles.btnNew} id="new-doctor">
+            Cadastrar novo médico
+          </button>
         </Link>
       </div>
-      <body className="body-menu">
-        <div className="list">
-          <table className="table_list">
-            <tr>
-              <th>Nome</th>
-              <th>CRM</th>
-              <th>Telefone</th>
-              <th>Especialidade</th>
-            </tr>
-            {listDoctor &&
-              listDoctor.map((doctor: Doctor) => {
-                return (
-                  <tr>
-                    <td>{doctor.name}</td>
-                    <td>{doctor.crm}</td>
-                    <td>{doctor.phoneNumber}</td>
-                    <td>
-                      {doctor.speciality}
-                      <div
-                        className="menu_tooltip"
-                        onClick={handleClick}
-                        style={{ display: isShown ? "block" : "none" }}
-                      >
-                        :
-                        <div className="menu_tooltip_options">
-                          <p>editar</p>
-                          <hr />
-                          <p>deletar</p>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                );
-              })}
-          </table>
-        </div>
-      </body>
+      <div className={styles.bodyMenu}>
+        <table className={styles.table_list}>
+          <tr>
+            <th>Nome</th>
+            <th>CRM</th>
+            <th>Telefone</th>
+            <th>Especialização</th>
+            <th>Ações</th>
+          </tr>
+          {listDoctor &&
+            listDoctor.map((doctor: Doctor) => {
+              return (
+                <tr>
+                  <td>{doctor.name}</td>
+                  <td>{doctor.crm}</td>
+                  <td>{doctor.phoneNumber}</td>
+                  <td>{doctor.speciality}</td>
+                  <td>
+                    <div className={styles.menu_tooltip_options}>
+                      <Link to="/doctor/editDoctor">
+                        <button className={styles.btnEdit} id="edit-doctor">
+                          <BsFillPencilFill />
+                        </button>
+                      </Link>
+                      <Link to="/doctor/deleteDoctor">
+                        <button className={styles.btnDelete} id="delete-doctor">
+                          <FaTrash />
+                        </button>
+                      </Link>
+                    </div>
+                  </td>
+                </tr>
+              );
+            })}
+        </table>
+      </div>
     </div>
   );
 }

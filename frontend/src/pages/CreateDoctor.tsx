@@ -1,11 +1,12 @@
-import "../styles/pagcreatedoctor.css";
 import React, { useState, FormEvent } from "react";
-import { AiFillHome } from "react-icons/ai";
-import Header from "../components/Header";
-import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import api from "../utils/api";
+import Form from "react-bootstrap/Form";
 import { Link } from "react-router-dom";
+
+import styles from "../styles/pagcreatedoctor.module.css";
+import api from "../utils/api";
+import Header from "../components/Header";
+import { Crumb } from "../components/Crumb";
 
 function CreateDoctor() {
   const [name, setName] = useState("");
@@ -23,33 +24,29 @@ function CreateDoctor() {
       speciality: speciality,
     });
 
-    window.history.pushState({},"","/doctor")
+    window.history.pushState({}, "", "/doctor");
+    window.location.reload();
   }
 
   return (
     <>
-      <div className="head-main">
-        <Header />
-      </div>
-      <div className="container-new-doctor">
-        <div className="crumb">
-          <AiFillHome />
-          <label> Home {">"} </label>
-          <Link to="/doctor">Médico {">"}</Link>
-          <label> Criar novo Médico</label>
-        </div>
-        <div className="container-form">
-          <div className="form-create-doctor">
-            <Form onSubmit={(e) => handleSubmit(e)} className="form">
+      <Header />
+      <div className={styles.container}>
+        <Crumb />
+        <div className={styles.container}>
+          <div className={styles.form}>
+            <Form onSubmit={(e) => handleSubmit(e)}>
               <Form.Group
                 onChange={(e: any) => {
                   setName(e.target.value);
                 }}
-                className="mb-3"
+                className={`${styles.mb3} mb-3`}
+                style={{ display: "flex" }}
                 controlId="formName"
               >
-                <Form.Label>Nome: </Form.Label>
+                <Form.Label className={styles.formLabel}>Nome: </Form.Label>
                 <Form.Control
+                  className={styles.formControl}
                   type="text"
                   placeholder="Digite o nome do paciente"
                 />
@@ -59,33 +56,46 @@ function CreateDoctor() {
                 onChange={(e: any) => {
                   setCrm(e.target.value);
                 }}
-                className="mb-3"
+                className={`${styles.mb3} mb-3`}
+                style={{ display: "flex" }}
                 controlId="formCRM"
               >
-                <Form.Label>CRM: </Form.Label>
-                <Form.Control type="text" placeholder="Digite o CRM" />
+                <Form.Label className={styles.formLabel}>CRM: </Form.Label>
+                <Form.Control
+                  className={styles.formControl}
+                  type="text"
+                  placeholder="Digite o CRM"
+                />
               </Form.Group>
 
               <Form.Group
                 onChange={(e: any) => {
                   setPhone(e.target.value);
                 }}
-                className="mb-3"
+                className={`${styles.mb3} mb-3`}
                 controlId="formTelefone"
               >
-                <Form.Label>Telefone: </Form.Label>
-                <Form.Control type="telefone" placeholder="Digite o Telefone" />
+                <Form.Label className={styles.formLabel}>Telefone: </Form.Label>
+                <Form.Control
+                  className={styles.formControl}
+                  type="telefone"
+                  placeholder="Digite o Telefone"
+                />
               </Form.Group>
 
               <Form.Group
                 onChange={(e: any) => {
                   setSpeciality(e.target.value);
                 }}
-                className="mb-3"
+                className={`${styles.mb3} mb-3`}
+                style={{ display: "flex", maxWidth: "90%" }}
                 controlId="formemail"
               >
-                <Form.Label>Especialidade: </Form.Label>
+                <Form.Label className={styles.formLabel}>
+                  Especialidade:{" "}
+                </Form.Label>
                 <Form.Control
+                  className={styles.formControl}
                   type="especialidade"
                   placeholder="Digite o e-mail"
                 />

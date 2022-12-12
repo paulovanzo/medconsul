@@ -1,42 +1,70 @@
-import '../styles/schedule.css' 
-import { useState, useEffect } from 'react'
-import { AiFillHome } from 'react-icons/ai';
-import { Link } from 'react-router-dom';
-import api from "../utils/api"
-import Form from 'react-bootstrap/Form';
+import styles from "../styles/list.module.css";
+import { useState, useEffect } from "react";
+import api from "../utils/api";
 
-function Schedule() { 
- 
-    return ( 
-        <div className='container-list'> 
-            <div className='crumb'> 
-                <AiFillHome /> 
-                <Link to="/"> Home {'>'} </Link>
-                <label> Agenda </label> 
-            </div> 
-            <body className='body-menu'> 
-                <div className='list'> 
-                    <Form className='form'>
-                        <Form.Group className="mb-3">
-                            <Form.Label>Escolha o dia:</Form.Label>
-                            <Form.Select>
-                                <option>Domingo</option>
-                                <option>Segunda</option>
-                                <option>Terça</option>
-                                <option>Quarta</option>
-                                <option>Quinta</option>
-                                <option>Sexta</option>
-                                <option>Sabado</option>
-                            </Form.Select>
-                        </Form.Group>
-                    </Form>
-                </div> 
-            </body> 
-        </div> 
- 
-    )
-} 
- 
- 
- 
-export default Schedule
+type TSchedule = {
+  domingo: string;
+  segunda: string;
+  terca: string;
+  quarta: string;
+  quinta: string;
+  sexta: string;
+  sabado: string;
+};
+
+function Schedule() {
+  const [schedule, setSchedule] = useState<Array<TSchedule>>([]);
+
+  async function fetchData() {
+    api.get<Array<TSchedule>>("/api/v1/schedule").then((res) => {
+      console.log(res.data);
+      setSchedule(res.data);
+    });
+  }
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  return (
+    <div className={styles.container}>
+      <div className={styles.filterCreate}>
+        <input
+          className={styles.search}
+          type="text"
+          id="search-schedule"
+          placeholder="Campo de busca"
+        />
+      </div>
+      <div className="list">
+        <table className={styles.table_list}>
+          <tr>
+            <th>Domingo</th>
+            <th>Segunda</th>
+            <th>Terça</th>
+            <th>Quarta</th>
+            <th>Quinta</th>
+            <th>Sexta</th>
+            <th>Sabado</th>
+          </tr>
+          {schedule &&
+            schedule.map((schedule: TSchedule) => {
+              return (
+                <tr>
+                  <td>{schedule.domingo}</td>
+                  <td>{schedule.segunda}</td>
+                  <td>{schedule.terca}</td>
+                  <td>{schedule.quarta}</td>
+                  <td>{schedule.quinta}</td>
+                  <td>{schedule.sexta}</td>
+                  <td>{schedule.sabado}</td>
+                </tr>
+              );
+            })}
+        </table>
+      </div>
+    </div>
+  );
+}
+
+export default Schedule;

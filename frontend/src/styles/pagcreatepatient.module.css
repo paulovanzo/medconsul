@@ -1,0 +1,41 @@
+.container {
+  max-width: 95%;
+  margin: 1rem;
+}
+
+.form {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.form button {
+  background-color: #05595b;
+  border: none;
+  border-radius: 10px;
+  color: #f9f9f9;
+  height: 30px;
+  margin: 5px;
+  width: 100px;
+  cursor: pointer;
+}
+
+.formControl {
+  background-color: #dde5e4;
+  border-radius: 10px;
+  height: 35px;
+  border: none;
+  width: 300px;
+}
+
+.formLabel {
+  size: 20px;
+  margin: 15px;
+}
+
+.mb3 {
+  display: grid;
+  margin: 10px;
+}

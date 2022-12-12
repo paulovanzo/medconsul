@@ -1,0 +1,156 @@
+table {
+  color: #333;
+  font-family: Helvetica, Arial, sans-serif;
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  border: 0 none;
+  height: 30px;
+}
+
+th {
+  font-family: "jost";
+  background: #9ed2c6;
+  height: 40px;
+}
+
+td {
+  font-family: "jost";
+  background: #fafafa;
+  text-align: center;
+}
+
+tr:nth-child(even) td {
+  background: #dde5e4;
+}
+
+tr:nth-child(odd) td {
+  background: #f3f7f6;
+}
+
+tr:first-child th:first-child {
+  border-top-left-radius: 10px;
+}
+tr:first-child th:last-child {
+  border-top-right-radius: 10px;
+}
+tr:first-child th:first-child {
+  border-bottom-left-radius: 10px;
+}
+tr:first-child th:last-child {
+  border-bottom-right-radius: 10px;
+}
+
+tr:first-child td:first-child {
+  border-top-left-radius: 10px;
+}
+tr:first-child td:last-child {
+  border-top-right-radius: 10px;
+}
+
+tr:last-child td:first-child {
+  border-bottom-left-radius: 10px;
+}
+tr:last-child td:last-child {
+  border-bottom-right-radius: 10px;
+}
+
+tr:first-child td {
+  border-top-style: solid;
+}
+tr td:first-child {
+  border-left-style: solid;
+}
+
+.body {
+  background-color: #f9f9f9;
+  width: 100%;
+  border-radius: 10px;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.menu_tooltip {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.menu_tooltip_options {
+  justify-content: space-evenly;
+  display: flex;
+  width: 100%;
+}
+
+.formLabel {
+  size: 20px;
+  margin: 15px;
+}
+
+a {
+  margin: 0px 5px 0px 5px;
+}
+
+.container {
+  width: 95%;
+  margin: 1rem;
+}
+
+.search {
+  border-radius: 10px;
+  width: 290px;
+  height: 30px;
+  border-color: #05595b;
+  background-image: url("../icons/icons8-pesquisar-30 1.png");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 25px;
+  background-color: #fcfcfc;
+  border: 1px solid #05595b;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.filterCreate {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem;
+}
+
+.btnNew {
+  height: 35px;
+  width: 220px;
+  background-color: #05595b;
+  color: #fcfcfc;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.btnEdit {
+  background-color: #05595b;
+  cursor: pointer;
+  width: 100%;
+  border: 0.2rem;
+  border-radius: 10px;
+  margin: 0.4rem;
+  height: 30px;
+}
+
+.btnDelete {
+  background-color: #05595b;
+  cursor: pointer;
+  width: 100%;
+  border: 0.2rem;
+  border-radius: 5px;
+  margin: 0.4rem;
+  height: 30px;
+}

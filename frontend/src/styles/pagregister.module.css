@@ -1,57 +1,39 @@
-@import "@fontsource/kodchasan";
-@import "@fontsource/jost";
-
-* {
-  margin: 0px;
-  padding: 0px;
-}
-
-:root {
-  background-color: #f6f6f6;
-}
-
-.container-login {
-  display: block;
-  text-align: center;
-  margin: 10%;
-}
-
-#logo-frist-name {
-  color: #028f7b;
-  font-family: "Kodchasan";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 60px;
-}
-
-#logo-lest-name {
-  color: #2a464f;
-  font-family: "Kodchasan";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 60px;
-}
-
 .body {
-  display: inline-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
 }
 
-.image-login {
-  width: 300px;
-  height: 200px;
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  max-width: 90%;
+  margin: 1rem;
+  position: absolute;
+  margin: 4rem;
+}
+
+.image {
+  height: 600px;
   background-color: #ffffff;
   border-radius: 10px 0px 0px 10px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.image-login img {
-  width: 300px;
-  height: 200px;
+.image img {
+  border-radius: 10px 0px 0px 10px;
+  max-width: 100%;
+  height: 100%;
 }
 
-.container-form-login {
-  width: 300px;
-  height: 200px;
+.containerForm {
+  max-width: 90%;
+  width: 350px;
+  height: 600px;
   background-color: #02b39a;
   border-radius: 0px 10px 10px 0px;
   display: flex;
@@ -60,12 +42,43 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.mb-3 {
-  display: grid;
+.formWrapper {
+  width: 350px;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  height: 100%;
+}
+
+@media only screen and (max-width: 425) {
+  .image {
+    width: 0px;
+    height: 0px;
+  }
+
+  .image img {
+    width: 0px;
+    height: 0px;
+  }
+
+  .containerForm {
+    border-radius: 10px;
+  }
+}
+
+.mb3 {
+  display: table-caption;
   justify-items: baseline;
 }
 
-.form-label {
+.formLabel {
   font-family: "jost";
   font-weight: 400;
   font-size: smaller;
@@ -73,7 +86,7 @@
   line-height: 27px;
 }
 
-.form-control {
+.formControl {
   background: #fefefe;
   border: 1px solid #2a464f;
   border-radius: 5px;
@@ -92,7 +105,7 @@ select:focus {
   outline: 0;
 }
 
-.btn-primary {
+.btnPrimary {
   margin: 15px;
   background: #2a464f;
   box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
