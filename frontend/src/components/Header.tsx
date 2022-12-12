@@ -44,7 +44,7 @@ function Header() {
             <Link to={`/doctor`}>Gerenciar médico</Link>
           </li>
           <li>
-            <Link to={`/appontiment`}>Gerenciar Agenda</Link>
+            <Link to={`/appointment`}>Gerenciar Agenda</Link>
           </li>
           <li>
             <Link to={`/patient`}>Gerenciar Paciente</Link>

@@ -23,6 +23,7 @@ function CreatePatient() {
       email: email,
       phoneNumber: phone,
       cpf: cpf,
+      birthday: '2022-12-12'
     });
 
     window.history.pushState({}, "", "/patient");

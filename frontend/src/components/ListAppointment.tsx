@@ -43,7 +43,7 @@ function ListAppointment() {
           placeholder="Campo de busca"
         />
         <Link to="../appointment/createNewAppointment">
-          <button id="new-appointment">Cadastrar novo agendamento</button>
+          <button className={styles.btnNew} id="new-appointment">Cadastrar novo agendamento</button>
         </Link>
       </div>
       <div className="list">
