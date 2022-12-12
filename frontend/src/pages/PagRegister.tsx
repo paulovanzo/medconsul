@@ -49,7 +49,7 @@ function PagRegister() {
             <img src={imgRegister} />
           </div>
           <div className={styles.containerForm}>
-            <div className={styles.containerForm}>
+            <div className={styles.formWrapper}>
               <Form onSubmit={(e) => handleSubmit(e)} className={styles.form}>
                 <Form.Group className={styles.mb3} controlId="formRegister">
                   <Form.Label className={styles.formLabel}>Login: </Form.Label>

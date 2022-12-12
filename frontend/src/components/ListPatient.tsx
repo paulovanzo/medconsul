@@ -1,14 +1,18 @@
 import { useState, useEffect } from "react";
-import styles from "../styles/list.module.css";
 import { Link } from "react-router-dom";
-import api from "../utils/api";
+
+import { BsFillPencilFill } from "react-icons/bs";
+import { FaTrash } from "react-icons/fa";
+
 import { Crumb } from "./Crumb";
+import styles from "../styles/list.module.css";
+import api from "../utils/api";
 
 type Patient = {
   name: string;
   cpf: string;
   phoneNumber: string;
-  birthday: Date;
+  gender: string;
 };
 
 export default function ListPatient() {
@@ -61,18 +65,19 @@ export default function ListPatient() {
                   <td>{patient.name}</td>
                   <td>{patient.cpf}</td>
                   <td>{patient.phoneNumber}</td>
+                  <td>{patient.gender}</td>
                   <td>
-                    <div
-                      className={styles.menu_tooltip}
-                      onClick={handleClick}
-                      style={{ display: isShown ? "block" : "none" }}
-                    >
-                      :
-                      <div className={styles.menu_tooltip_options}>
-                        <p>editar</p>
-                        <hr />
-                        <p>deletar</p>
-                      </div>
+                    <div className={styles.menu_tooltip_options}>
+                      <Link to="/doctor/editDoctor">
+                        <button className={styles.btnEdit} id="edit-doctor">
+                          <BsFillPencilFill />
+                        </button>
+                      </Link>
+                      <Link to="/doctor/deleteDoctor">
+                        <button className={styles.btnDelete} id="delete-doctor">
+                          <FaTrash />
+                        </button>
+                      </Link>
                     </div>
                   </td>
                 </tr>

@@ -13,12 +13,13 @@ th {
 }
 
 th {
+  font-family: "jost";
   background: #9ed2c6;
-  font-weight: bold;
   height: 40px;
 }
 
 td {
+  font-family: "jost";
   background: #fafafa;
   text-align: center;
 }

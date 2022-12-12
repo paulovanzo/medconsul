@@ -80,6 +80,7 @@
 
 .sectionButtons :first-child,
 .sectionButtons :last-child {
+  font-family: "jost";
   margin: 7px 0;
   display: flex;
   align-items: center;

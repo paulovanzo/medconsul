@@ -30,9 +30,7 @@ function CreateDoctor() {
 
   return (
     <>
-      <div className={styles.headerMain}>
-        <Header />
-      </div>
+      <Header />
       <div className={styles.container}>
         <Crumb />
         <div className={styles.container}>
