@@ -28,7 +28,10 @@ function PagPatientProfile() {
                   </Form.Group>
                 </Col>
                 <Col>
-                  <Form.Group className="mb-3" controlId="formCPF">
+                  <Form.Group
+                    className={`${styles.mb3} mb-3`}
+                    controlId="formCPF"
+                  >
                     <Form.Label>CPF: </Form.Label>
                     <Form.Control type="text" placeholder="123.456.789-10" />
                   </Form.Group>
@@ -36,13 +39,19 @@ function PagPatientProfile() {
               </Row>
               <Row>
                 <Col>
-                  <Form.Group className="mb-3" controlId="formGenre">
+                  <Form.Group
+                    className={`${styles.mb3} mb-3`}
+                    controlId="formGenre"
+                  >
                     <Form.Label>Genero: </Form.Label>
                     <Form.Control type="text" placeholder="M" />
                   </Form.Group>
                 </Col>
                 <Col>
-                  <Form.Group className="mb-3" controlId="formPhone">
+                  <Form.Group
+                    className={`${styles.mb3} mb-3`}
+                    controlId="formPhone"
+                  >
                     <Form.Label>Telefone: </Form.Label>
                     <Form.Control type="text" placeholder="(84) 9 9282-4567" />
                   </Form.Group>
@@ -50,7 +59,10 @@ function PagPatientProfile() {
               </Row>
               <Row>
                 <Col>
-                  <Form.Group className="mb-3" controlId="formDesc">
+                  <Form.Group
+                    className={`${styles.mb3} mb-3`}
+                    controlId="formDesc"
+                  >
                     <Form.Label>Descrição geral: </Form.Label>
                     <Form.Control type="textarea" placeholder="Lorem Ipsun" />
                   </Form.Group>

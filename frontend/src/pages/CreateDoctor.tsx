@@ -25,6 +25,7 @@ function CreateDoctor() {
     });
 
     window.history.pushState({}, "", "/doctor");
+    window.location.reload();
   }
 
   return (

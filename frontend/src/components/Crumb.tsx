@@ -24,9 +24,12 @@ export function Crumb() {
         </Link>
         {urls.map((url, i) => {
           return (
-            <Link key={i} to={`/${urls.slice(0, i + 1).join("/")}`}>
-              {">"} <label>{urlText[url]}</label>
-            </Link>
+            <>
+              {">"}
+              <Link key={i} to={`/${urls.slice(0, i + 1).join("/")}`}>
+                <label>{urlText[url]}</label>
+              </Link>
+            </>
           );
         })}
       </div>

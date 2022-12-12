@@ -1,4 +1,3 @@
-import { AiFillHome } from "react-icons/ai";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
@@ -27,6 +26,7 @@ function CreatePatient() {
     });
 
     window.history.pushState({}, "", "/patient");
+    window.location.reload();
   }
 
   return (

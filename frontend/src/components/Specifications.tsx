@@ -1,4 +1,3 @@
-//import "../styles/appointment.css";
 import { useState, useEffect } from "react";
 import Form from "react-bootstrap/Form";
 import api from "../utils/api";
@@ -30,10 +29,6 @@ function Specifications() {
   useEffect(() => {
     fetchData();
   }, []);
-
-  const handleClick = () => {
-    setIsShown(!isShown);
-  };
 
   return (
     <div className="container-form">

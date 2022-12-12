@@ -25,6 +25,7 @@ function CreateAppointment() {
     });
 
     window.history.pushState({}, "", "/appointment");
+    window.location.reload();
   }
 
   return (

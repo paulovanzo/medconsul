@@ -6,6 +6,7 @@ import api from "../utils/api";
 import imgLogin from "../icons/img-login.png";
 import { Context } from "../contexts/AuthContext";
 import { FormEvent, useContext, useState } from "react";
+import { Link } from "react-router-dom";
 import { Logo } from "../components/MainLogo";
 
 function PagLogin() {
@@ -67,6 +68,9 @@ function PagLogin() {
                 <Button className={styles.btnPrimary} type="submit">
                   Entrar
                 </Button>
+                <Link to={"/register"} className={styles.btnRegister}>
+                  Cadastre-se
+                </Link>
               </Form>
             </div>
           </div>
