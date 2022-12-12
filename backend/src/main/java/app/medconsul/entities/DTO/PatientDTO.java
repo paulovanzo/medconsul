@@ -43,14 +43,6 @@ public class PatientDTO {
         this.email = email;
     }
 
-    public PatientDTO(String name, String cpf, String phoneNumber, String email, String urlImage) {
-        this.name = name;
-        this.cpf = cpf;
-        this.phoneNumber = phoneNumber;
-        this.email = email;
-        this.urlImage = urlImage;
-    }
-
     public Long getId() {
         return id;
     }

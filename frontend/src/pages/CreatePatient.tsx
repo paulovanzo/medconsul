@@ -20,9 +20,9 @@ function CreatePatient() {
 
     await api.post("/api/v1/patient", {
       name: name,
-      cpf: cpf,
-      phoneNumber: phone,
       email: email,
+      phoneNumber: phone,
+      cpf: cpf,
     });
 
     window.history.pushState({}, "", "/patient");

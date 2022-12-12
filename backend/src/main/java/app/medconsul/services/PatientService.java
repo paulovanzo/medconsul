@@ -22,7 +22,7 @@ public class PatientService implements IPatientService {
 
     @Override
     public Patient save(Patient patient) {
-        Patient pat = new Patient(patient.getName(),patient.getEmail(),patient.getPhoneNumber());
+        Patient pat = new Patient(patient.getName(),patient.getEmail(),patient.getPhoneNumber(), patient.getCpf());
 
         return patientRepository.save(pat);
     }
@@ -32,7 +32,6 @@ public class PatientService implements IPatientService {
         pat.setName(tmpPatient.getName());
         pat.setEmail(tmpPatient.getEmail());
         pat.setPhoneNumber(tmpPatient.getPhoneNumber());
-        pat.setUrlImage(tmpPatient.getUrlImage());
 
         return patientRepository.save(pat);
     }

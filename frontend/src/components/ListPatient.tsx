@@ -10,9 +10,9 @@ import api from "../utils/api";
 
 type Patient = {
   name: string;
-  cpf: string;
+  email: string;
   phoneNumber: string;
-  gender: string;
+  cpf: string;
 };
 
 export default function ListPatient() {
@@ -54,18 +54,19 @@ export default function ListPatient() {
         <table className="table_list">
           <tr>
             <th>Nome</th>
-            <th>CPF</th>
+            <th>Email</th>
             <th>Telefone</th>
-            <th>Genero</th>
+            <th>CPF</th>
+            <th>Ações</th>
           </tr>
           {listPatient &&
             listPatient.map((patient: Patient) => {
               return (
                 <tr>
                   <td>{patient.name}</td>
-                  <td>{patient.cpf}</td>
+                  <td>{patient.email}</td>
                   <td>{patient.phoneNumber}</td>
-                  <td>{patient.gender}</td>
+                  <td>{patient.cpf}</td>
                   <td>
                     <div className={styles.menu_tooltip_options}>
                       <Link to="/doctor/editDoctor">

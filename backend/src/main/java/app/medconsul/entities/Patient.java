@@ -50,25 +50,11 @@ public class Patient {
         this.birthday = LocalDate.MIN;
     }
 
-    public Patient(String name, String phoneNumber, String email) {
-        this.name = name;
-        this.phoneNumber = phoneNumber;
-        this.email = email;
-    }
-
     public Patient(String name, String cpf, String phoneNumber, String email) {
         this.name = name;
         this.cpf = cpf;
         this.phoneNumber = phoneNumber;
         this.email = email;
-    }
-
-    public Patient(String name, String cpf, String phoneNumber, String email, String urlImage) {
-        this.name = name;
-        this.cpf = cpf;
-        this.phoneNumber = phoneNumber;
-        this.email = email;
-        this.urlImage = urlImage;
     }
 
     public Long getId() {
@@ -92,6 +78,14 @@ public class Patient {
     }
 
     public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getCpf() {
+        return email;
+    }
+
+    public void setCpf(String email) {
         this.email = email;
     }
 
