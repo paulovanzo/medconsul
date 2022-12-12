@@ -23,8 +23,7 @@ public class AppointmentService implements IAppointmentService {
     public Appointment save(Appointment appointment) {
         return appointmentRepository.save(appointment);
     }
-
-    @Override
+    
     public void delete(long id){
         appointmentRepository.deleteById(id);
     }
