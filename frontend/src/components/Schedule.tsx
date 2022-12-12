@@ -1,7 +1,6 @@
 import styles from "../styles/list.module.css";
 import { useState, useEffect } from "react";
 import api from "../utils/api";
-import { Crumb } from "./Crumb";
 
 type TSchedule = {
   domingo: string;
@@ -34,10 +33,9 @@ function Schedule() {
 
   return (
     <div className={styles.container}>
-      <Crumb />
       <div className={styles.filterCreate}>
         <input
-          className={styles.btnNew}
+          className={styles.search}
           type="text"
           id="search-schedule"
           placeholder="Campo de busca"

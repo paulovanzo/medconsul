@@ -1,7 +1,11 @@
-//import "../styles/appointment.css";
+import styles from "../styles/pagappointment.module.css";
 import { useState, useEffect } from "react";
 import Form from "react-bootstrap/Form";
 import api from "../utils/api";
+
+type Estabelecimento = {
+  name: string;
+};
 
 type Especialidade = {
   name: string;
@@ -13,10 +17,15 @@ type Unidade = {
 
 function Specifications() {
   const [isShown, setIsShown] = useState(true);
+  const [estabelecimento, setEstabelecimento] = useState<Array<Estabelecimento>>([]);
   const [especialidade, setEspecialidade] = useState<Array<Especialidade>>([]);
   const [unidade, setUnidade] = useState<Array<Unidade>>([]);
 
   async function fetchData() {
+    api.get<Array<Estabelecimento>>("/api/v1/estabelecimento").then((res) => {
+      console.log(res.data);
+      setEstabelecimento(res.data);
+    });
     api.get<Array<Especialidade>>("/api/v1/especialidade").then((res) => {
       console.log(res.data);
       setEspecialidade(res.data);
@@ -36,15 +45,15 @@ function Specifications() {
   };
 
   return (
-    <div className="container-form">
-      <div className="form-specifications">
-        <Form className="form">
-          <Form.Group className="mb-3">
-            <Form.Label>Tipo de estabelecimento</Form.Label>
-            <Form.Text>
+    <div className={styles.container}>
+      <div className={styles.form}>
+        <Form>
+          <Form.Group className={`${styles.mb3} mb-3`} style={{ display: "grid" }} controlId="formEstabelecimento">
+            <Form.Label className={styles.formLabel}>Tipo de estabelecimento</Form.Label>
+            <Form.Text className={styles.formText}>
               Qual é o tipo de estabelecimento que você procura?
             </Form.Text>
-            <Form.Select aria-label="Insira aqui o tipo de estabelecimento">
+            <Form.Select className={styles.formSelect}>
               <option>Insira aqui o tipo de estabelecimento</option>
               <option>Estabelecimento</option>
               <option>Estabelecimento</option>
@@ -54,12 +63,12 @@ function Specifications() {
               <option>Estabelecimento</option>
             </Form.Select>
           </Form.Group>
-          <Form.Group className="mb-3">
-            <Form.Label>Especialidade</Form.Label>
-            <Form.Text>
+          <Form.Group className={`${styles.mb3} mb-3`} style={{ display: "grid" }} controlId="formEspecialidade">
+            <Form.Label className={styles.formLabel}>Especialidade</Form.Label>
+            <Form.Text className={styles.formText}>
               Qual é a especialidade ou exame (procedimento) que você procura?
             </Form.Text>
-            <Form.Select aria-label="Insira aqui a especialidade">
+            <Form.Select className={styles.formSelect}>
               <option>Insira aqui a especialidade</option>
               <option>Especialidade</option>
               <option>Especialidade</option>
@@ -69,12 +78,12 @@ function Specifications() {
               <option>Especialidade</option>
             </Form.Select>
           </Form.Group>
-          <Form.Group className="mb-3">
-            <Form.Label>Unidade de atendimento</Form.Label>
-            <Form.Text>
+          <Form.Group className={`${styles.mb3} mb-3`} style={{ display: "grid" }} controlId="formEspecialidade">
+            <Form.Label className={styles.formLabel}>Unidade de atendimento</Form.Label>
+            <Form.Text className={styles.formText}>
               Em qual unidade de atendimento deseja realizar a consulta?
             </Form.Text>
-            <Form.Select aria-label="Insira aqui a unidade">
+            <Form.Select className={styles.formSelect}>
               <option>Insira aqui a unidade</option>
               <option>Unidade</option>
               <option>Unidade</option>
