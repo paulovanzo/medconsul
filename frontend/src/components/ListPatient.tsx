@@ -64,9 +64,9 @@ export default function ListPatient() {
               return (
                 <tr>
                   <td>{patient.name}</td>
-                  <td>{patient.email}</td>
-                  <td>{patient.phoneNumber}</td>
                   <td>{patient.cpf}</td>
+                  <td>{patient.phoneNumber}</td>
+                  <td>{patient.email}</td>
                   <td>
                     <div className={styles.menu_tooltip_options}>
                       <Link to="/doctor/editDoctor">

@@ -6,8 +6,7 @@ type Props = {
 
 export const ProtectedRoute = ({ children }: Props) => {
   if (localStorage.getItem("authenticated") !== "true") {
-    //return <Navigate to="/login" />;
-    return children;
+    return <Navigate to="/login" />;
   } else {
     return children;
   }
