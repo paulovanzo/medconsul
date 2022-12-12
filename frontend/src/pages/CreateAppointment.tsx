@@ -1,10 +1,14 @@
+import { FormEvent, useState } from "react";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import { Link } from "react-router-dom";
+
+import styles from "../styles/pagcreateappointment.module.css";
+import api from "../utils/api";
 import Header from "../components/Header";
 import { Crumb } from "../components/Crumb";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
-import api from "../utils/api";
-import { Link } from "react-router-dom";
-import { FormEvent, useState } from "react";
+
+
 import Schedule from "../components/Schedule";
 import Specifications from "../components/Specifications";
 
@@ -30,56 +34,60 @@ function CreateAppointment() {
 
   return (
     <>
-      <div className="head-main">
+      <div className={styles.headerMain}>
         <Header />
       </div>
-      <div className="container-new-appointment">
+      <div className={styles.container}>
         <Crumb />
-        <div className="container-form">
-          <div className="form-create-appointment">
-            <Form onSubmit={(e) => handleSubmit(e)} className="form">
+        <div className={styles.container}>
+          <div className={styles.form}>
+            <Form onSubmit={(e) => handleSubmit(e)}>
               <Form.Group
                 onChange={(e: any) => {
                   setPatient(e.target.value);
                 }}
-                className="mb-3"
+                className={`${styles.mb3} mb-3`}
+                style={{ display: "flex" }}
                 controlId="formPaciente"
               >
-                <Form.Label>Paciente: </Form.Label>
-                <Form.Control type="text" placeholder="Informe o paciente" />
+                <Form.Label className={styles.formLabel}>Paciente: </Form.Label>
+                <Form.Control className={styles.formControl} type="text" placeholder="Informe o paciente" />
               </Form.Group>
 
               <Form.Group
                 onChange={(e: any) => {
                   setDoctor(e.target.value);
                 }}
-                className="mb-3"
+                className={`${styles.mb3} mb-3`}
+                style={{ display: "flex" }}
                 controlId="formMedico"
               >
-                <Form.Label>Medico: </Form.Label>
-                <Form.Control type="text" placeholder="Informe o medico" />
+                <Form.Label className={styles.formLabel}>Medico: </Form.Label>
+                <Form.Control className={styles.formControl} type="text" placeholder="Informe o medico" />
               </Form.Group>
 
               <Form.Group
                 onChange={(e: any) => {
                   setDate(e.target.value);
                 }}
-                className="mb-3"
+                className={`${styles.mb3} mb-3`}
+                style={{ display: "flex" }}
                 controlId="formData"
               >
-                <Form.Label>Data: </Form.Label>
-                <Form.Control type="text" placeholder="Digite a data" />
+                <Form.Label className={styles.formLabel}>Data: </Form.Label>
+                <Form.Control className={styles.formControl} type="text" placeholder="Digite a data" />
               </Form.Group>
 
               <Form.Group
                 onChange={(e: any) => {
                   setSchedule(e.target.value);
                 }}
-                className="mb-3"
+                className={`${styles.mb3} mb-3`}
+                style={{ display: "flex" }}
                 controlId="formHorario"
               >
-                <Form.Label>Horario: </Form.Label>
-                <Form.Control type="text" placeholder="Digite o horario" />
+                <Form.Label className={styles.formLabel}>Horario: </Form.Label>
+                <Form.Control className={styles.formControl} type="text" placeholder="Digite o horario" />
               </Form.Group>
 
               <Link to="/appointment">
