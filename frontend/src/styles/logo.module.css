@@ -3,7 +3,7 @@
   font-family: "Kodchasan";
   font-style: normal;
   font-weight: 600;
-  font-size: 60px;
+  font-size: 4rem;
 }
 
 .lastName {
@@ -11,18 +11,16 @@
   font-family: "Kodchasan";
   font-style: normal;
   font-weight: 600;
-  font-size: 60px;
+  font-size: 4rem;
 }
 
 .containerLogo {
   max-width: 90%;
 }
 
-.headerMain {
+.main {
   max-width: 90%;
   height: 90px;
-  width: 100%;
-  background-color: #05595b;
   display: flex;
   flex-direction: row-reverse;
   align-items: center;

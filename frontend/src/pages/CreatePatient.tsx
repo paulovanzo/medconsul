@@ -1,4 +1,3 @@
-import { AiFillHome } from "react-icons/ai";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
@@ -27,6 +26,7 @@ function CreatePatient() {
     });
 
     window.history.pushState({}, "", "/patient");
+    window.location.reload();
   }
 
   return (
@@ -36,7 +36,7 @@ function CreatePatient() {
         <Crumb />
         <div className={styles.container}>
           <div className={styles.form}>
-            <Form onSubmit={(e) => handleSubmit(e)} className={styles.form}>
+            <Form onSubmit={(e) => handleSubmit(e)}>
               <Form.Group
                 onChange={(e: any) => {
                   setName(e.target.value);
@@ -47,6 +47,7 @@ function CreatePatient() {
               >
                 <Form.Label className={styles.formLabel}>Nome: </Form.Label>
                 <Form.Control
+                  className={styles.formControl}
                   type="text"
                   placeholder="Digite o nome do paciente"
                 />
@@ -60,8 +61,12 @@ function CreatePatient() {
                 style={{ display: "flex" }}
                 controlId="formCPF"
               >
-                <Form.Label>CPF: </Form.Label>
-                <Form.Control type="text" placeholder="Digite o CPF" />
+                <Form.Label className={styles.formLabel}>CPF: </Form.Label>
+                <Form.Control
+                  className={styles.formControl}
+                  type="text"
+                  placeholder="Digite o CPF"
+                />
               </Form.Group>
 
               <Form.Group
@@ -72,8 +77,12 @@ function CreatePatient() {
                 style={{ display: "flex" }}
                 controlId="formTelefone"
               >
-                <Form.Label>Telefone: </Form.Label>
-                <Form.Control type="telefone" placeholder="Digite o Telefone" />
+                <Form.Label className={styles.formLabel}>Telefone: </Form.Label>
+                <Form.Control
+                  className={styles.formControl}
+                  type="telefone"
+                  placeholder="Digite o Telefone"
+                />
               </Form.Group>
 
               <Form.Group
@@ -84,8 +93,12 @@ function CreatePatient() {
                 style={{ display: "flex" }}
                 controlId="formemail"
               >
-                <Form.Label>E-mail: </Form.Label>
-                <Form.Control type="email" placeholder="Digite o e-mail" />
+                <Form.Label className={styles.formLabel}>E-mail: </Form.Label>
+                <Form.Control
+                  className={styles.formControl}
+                  type="email"
+                  placeholder="Digite o e-mail"
+                />
               </Form.Group>
 
               <Link to="/patient">

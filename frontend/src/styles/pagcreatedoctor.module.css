@@ -1,17 +1,3 @@
-.headerMain {
-  height: 90px;
-  width: 100%;
-  background-color: #05595b;
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: center;
-}
-
-.headerFunctions {
-  display: flex;
-  padding: 2rem;
-}
-
 .container {
   max-width: 95%;
   margin: 1rem;

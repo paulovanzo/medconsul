@@ -25,13 +25,12 @@ function CreateDoctor() {
     });
 
     window.history.pushState({}, "", "/doctor");
+    window.location.reload();
   }
 
   return (
     <>
-      <div className={styles.headerMain}>
-        <Header />
-      </div>
+      <Header />
       <div className={styles.container}>
         <Crumb />
         <div className={styles.container}>

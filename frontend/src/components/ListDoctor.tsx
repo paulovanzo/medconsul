@@ -15,7 +15,6 @@ type Doctor = {
 };
 
 function ListDoctor() {
-  const [isShown, setIsShown] = useState(true);
   const [listDoctor, setListDoctor] = useState<Array<Doctor>>([]);
 
   async function fetchData() {
@@ -28,10 +27,6 @@ function ListDoctor() {
   useEffect(() => {
     fetchData();
   }, []);
-
-  const handleClick = () => {
-    setIsShown(!isShown);
-  };
 
   return (
     <div className={styles.container}>
@@ -55,7 +50,8 @@ function ListDoctor() {
             <th>Nome</th>
             <th>CRM</th>
             <th>Telefone</th>
-            <th>Especialidade</th>
+            <th>Especialização</th>
+            <th>Ações</th>
           </tr>
           {listDoctor &&
             listDoctor.map((doctor: Doctor) => {
@@ -64,27 +60,19 @@ function ListDoctor() {
                   <td>{doctor.name}</td>
                   <td>{doctor.crm}</td>
                   <td>{doctor.phoneNumber}</td>
+                  <td>{doctor.speciality}</td>
                   <td>
-                    {doctor.speciality}
-                    <div
-                      className={styles.menu_tooltip}
-                      onClick={handleClick}
-                      style={{ display: isShown ? "block" : "none" }}
-                    >
-                      :
-                      <div className={styles.menu_tooltip_options}>
-                        <Link to="/doctor/createNewDoctor">
-                          <button className={styles.btnNew} id="edit-doctor">
-                            <BsFillPencilFill />
-                          </button>
-                        </Link>
-                        <hr />
-                        <Link to="/doctor/deleteDoc">
-                          <button className={styles.btnNew} id="delete-doctor">
-                            <FaTrash />
-                          </button>
-                        </Link>
-                      </div>
+                    <div className={styles.menu_tooltip_options}>
+                      <Link to="/doctor/editDoctor">
+                        <button className={styles.btnEdit} id="edit-doctor">
+                          <BsFillPencilFill />
+                        </button>
+                      </Link>
+                      <Link to="/doctor/deleteDoctor">
+                        <button className={styles.btnDelete} id="delete-doctor">
+                          <FaTrash />
+                        </button>
+                      </Link>
                     </div>
                   </td>
                 </tr>

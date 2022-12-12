@@ -40,10 +40,6 @@ function Specifications() {
     fetchData();
   }, []);
 
-  const handleClick = () => {
-    setIsShown(!isShown);
-  };
-
   return (
     <div className={styles.container}>
       <div className={styles.form}>

@@ -13,7 +13,6 @@ type TSchedule = {
 };
 
 function Schedule() {
-  const [isShown, setIsShown] = useState(true);
   const [schedule, setSchedule] = useState<Array<TSchedule>>([]);
 
   async function fetchData() {
@@ -26,10 +25,6 @@ function Schedule() {
   useEffect(() => {
     fetchData();
   }, []);
-
-  const handleClick = () => {
-    setIsShown(!isShown);
-  };
 
   return (
     <div className={styles.container}>

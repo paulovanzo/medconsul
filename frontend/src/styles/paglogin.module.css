@@ -14,11 +14,7 @@
   max-width: 90%;
   margin: 1rem;
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
+  margin: 4rem;
 }
 
 .body {
@@ -113,6 +109,14 @@ select:focus {
   border-radius: 5px;
   color: white;
   width: 110px;
+  border: none;
+  height: 35px;
+  cursor: pointer;
+}
+
+.btnRegister {
+  margin: 1rem;
+  color: white;
   border: none;
   height: 35px;
   cursor: pointer;

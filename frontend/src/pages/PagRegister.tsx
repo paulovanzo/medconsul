@@ -36,6 +36,7 @@ function PagRegister() {
 
         handleLogin(data);
         window.history.pushState({}, "", "/");
+        window.location.reload();
       });
   }
 
@@ -48,10 +49,10 @@ function PagRegister() {
             <img src={imgRegister} />
           </div>
           <div className={styles.containerForm}>
-            <div className={styles.form}>
+            <div className={styles.formWrapper}>
               <Form onSubmit={(e) => handleSubmit(e)} className={styles.form}>
                 <Form.Group className={styles.mb3} controlId="formRegister">
-                  <Form.Label>Login: </Form.Label>
+                  <Form.Label className={styles.formLabel}>Login: </Form.Label>
                   <Form.Control
                     onChange={(e) => {
                       setUsername(e.target.value);
